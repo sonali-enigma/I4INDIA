@@ -1,0 +1,613 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from demo.themefisher.com/elite-shop/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Mar 2021 15:05:35 GMT -->
+<head>
+  <meta charset="utf-8">
+  <title>I4INDIA</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/venobox/venobox.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/animate/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/aos/aos.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap-touchspin-master/jquery.bootstrap-touchspin.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/nice-select/nice-select.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap-slider/bootstrap-slider.min.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+</head>
+
+<body>
+
+  <!-- preloader start -->
+  <div class="preloader">
+    <img src="{% static 'images/preloader.gif' %}" alt="preloader">
+  </div>
+  <!-- preloader end -->
+
+<!-- header -->
+<header>
+  <!-- top advertise -->
+  <!-- <div class="alert alert-secondary alert-dismissible fade show rounded-0 pb-0 mb-0" role="alert">
+    <div class="d-flex justify-content-between">
+      <p>SAVE UP TO $50</p>
+      <h4>SALE!</h4>
+      <div class="shop-now">
+        <a href="shop.html" class="btn btn-sm btn-primary">Shop Now</a>
+      </div>
+    </div>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div> -->
+
+  <!-- top header -->
+  <div class="top-header">
+    <div class="row">
+      <div class="col-lg-6 text-center text-lg-left">
+        <p class="text-white mb-lg-0 mb-1">Free shipping • Free 30 days return • Express delivery • Customer Care: +91 7428672100</p>
+      </div>
+      <div class="col-lg-6 text-center text-lg-right">
+
+      </div>
+    </div>
+  </div>
+  <!-- /top-header -->
+</header>
+
+<!-- navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white w-100" id="navbar">
+  <a class="navbar-brand order-2 order-lg-1" href="/"><img class="img-fluid" src="{% static 'images/logo1.png' %}" height="180px" width="200px" alt="logo"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse order-1 order-lg-2" id="navbarSupportedContent">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">home</a>
+      </li>
+
+      <li class="nav-item dropdown mega-dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Products
+        </a>
+        <div class="dropdown-menu mega-menu">
+          <div class="mx-3 mega-menu-item">
+            <h6><a style="color:#0CD1D9" href="/shop/TV/">TV</a></h6>
+            <ul class="pl-0">
+              <li><a href="/shop/TV/">OLED TVs</a></li>
+              <li><a href="/shop/TV/">NANOCELL TVs</a></li>
+              <li><a href="/shop/TV/">UHD 4K TVs</a></li>
+              <li><a href="/shop/TV/">SMART TVs</a></li>
+              <li><a href="/shop/TV/">LED TVs</a></li>
+            </ul>
+          </div>
+          <div class="mx-3 mega-menu-item">
+            <h6><a style="color:#0CD1D9" href="/shop/AUDIO/">AUDIO</a></h6>
+            <ul class="pl-0">
+              <li><a href="/shop/HOME THEATER/">HOME THEATER</a></li>
+              <li><a href="/shop/TOWER THEATER/">TOWER THEATER</a></li>
+            </ul>
+          </div>
+          <div class="mx-3 mega-menu-item">
+            <h6><a style="color:#0CD1D9" href="/shop/LARGE APPLIANCES/">LARGE APPLIANCES</a></h6>
+            <ul class="pl-0">
+              <li><a href="/shop/AIR CONDITIONER/">AIR CONDITIONER</a></li>
+              <li><a href="/shop/AIR COOLER/">AIR COOLER</a></li>
+              <li><a href="/shop/REFRIGERATOR/">REFRIGERATOR</a></li>
+              <li><a href="/shop/WASHING MACHINES/">WASHING MACHINES</a></li>
+            </ul>
+          </div>
+          <div class="mx-3 mega-menu-item">
+            <h6><a style="color:#0CD1D9" href="/shop/KITCHEN/">KITCHEN</a></h6>
+            <ul class="pl-0">
+              <li><a href="/shop/ATTA CHAKKI/">ATTA CHAKKI</a></li>
+              <li><a href="/shop/JUICER MIXER/">JUICER MIXER</a></li>
+              <li><a href="/shop/JUICER MIXER GRINDER/">JUICER MIXER GRINDER</a></li>
+              <li><a href="/shop/HOT PLATE/">ELECTRIC COOKING HEATER</a></li>
+            </ul>
+          </div>
+          <div class="mx-3 mega-menu-item">
+            <h6><a style="color:#0CD1D9" href="/shop/ELECTRICAL APPLIANCES/">ELECTRICAL APPLIANCES</a></h6>
+            <ul class="pl-0">
+              <li><a href="/shop/FAN/">FAN</a></li>
+              <li><a href="/shop/IRON/">IRONS</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </li>
+       <li class="nav-item">
+         {% if user.is_authenticated %}
+         <a class="nav-link" href="/profile/">Account</a>
+         <a class="nav-link" href="/logout/">Logout</a>
+         {% else %}
+         <a class="nav-link" href="/login/">Account</a>
+         {% endif %}
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact/">Contact Us</a>
+        {% if user.is_authenticated %}
+        <a href="/wishlist/" class="nav-link" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+        class="ti-heart"></i></a>
+        <a class="nav-link" href="/cart/"><i  class="ti-bag"></i>CART</a>
+        {% endif %}
+      </li>
+    </ul>
+
+
+
+  </div>
+
+  <div class="order-3 navbar-right-elements">
+          <form action="/" method="post">
+              {% csrf_token %}
+              <input type="text" name="message" placeholder="Search"/>
+              <button type="submit" class="search-btn"><i class="ti-search"></i></button>
+          </form>
+<!--      &lt;!&ndash; cart &ndash;&gt;-->
+<!--      <div class="cart">-->
+<!--        <button id="cartOpen" class="cart-btn"><i class="ti-bag"></i><span class="d-xs-none">CART</span> 3</button>-->
+<!--        <div class="cart-wrapper">-->
+<!--          <i id="cartClose" class="ti-close cart-close"></i>-->
+<!--          <h4 class="mb-4">Your Cart</h4>-->
+<!--          <ul class="pl-0 mb-3">-->
+<!--            <li class="d-flex border-bottom">-->
+<!--              <img src="images/cart/product-1.jpg" alt="product-img">-->
+<!--              <div class="mx-3">-->
+<!--                <h6>Eleven Paris Skinny Jeans</h6>-->
+<!--                <span>1</span> X <span>$79.00</span>-->
+<!--              </div>-->
+<!--              <i class="ti-close"></i>-->
+<!--            </li>-->
+<!--            <li class="d-flex border-bottom">-->
+<!--              <img src="images/cart/product-2.jpg" alt="product-img">-->
+<!--              <div class="mx-3">-->
+<!--                <h6>Eleven Paris Skinny Jeans top</h6>-->
+<!--                <span>1 X</span> <span>$79.00</span>-->
+<!--              </div>-->
+<!--              <i class="ti-close"></i>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--          <div class="mb-3">-->
+<!--            <span>Cart Total</span>-->
+<!--            <span class="float-right">$79.00</span>-->
+<!--          </div>-->
+<!--          <div class="text-center">-->
+<!--            <a href="cart.html" class="btn btn-dark btn-mobile rounded-0">view cart</a>-->
+<!--            <a href="shipping.html" class="btn btn-dark btn-mobile rounded-0">check out</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+    </div>
+  </div>
+</nav>
+<!-- /navigation -->
+{% block body %}
+<!-- main wrapper -->
+<div class="main-wrapper">
+
+<section class="section bg-gray hero-area">
+  <div class="container">
+    <div class="hero-slider">
+      
+      <!-- Start first slide  -->
+      <div class="slider-item">
+        <div class="row">
+          <div class="col-lg-6 align-self-center text-center text-md-left mb-4 mb-lg-0">
+            <h3 data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in="0" data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-out=".3">Electronics & Home Appliances,Save more now!!</h3>
+            <!-- Start Title -->
+            <h1 data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".2" data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-out=".3">Bestselling Collection</h1>
+            <!-- end title -->
+            <!-- Start Subtitle -->
+            <h3 class="mb-4" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".4" data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-out=".3">Upto 50% off</h3>
+            <!-- end subtitle -->
+            <!-- Start description -->
+            <p class="mb-4" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".6" data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-out=".3">Immerce Yourself in the Colors of Brilliance</p>
+            <!-- end description -->
+            <!-- Start button -->
+            <a href="shop/TV/" class="btn btn-primary" data-duration-in=".5" data-animation-in="fadeInLeft" data-delay-in=".8" data-animation-out="fadeOutLeft" data-delay-out="5" data-duration-out=".3">shop now</a>
+            <!-- end button -->
+          </div>
+          <!-- Start slide image -->
+          <div class="col-lg-6 text-center text-md-left">
+            <!-- background letter -->
+            <div class="bg-letter">
+              <span data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1.2" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
+
+              </span>
+              <!-- Slide image -->
+              <img class="img-fluid d-unset" src="{%static 'images/hero-area/main.png' %}" alt="converse" data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
+            </div>
+          </div>
+          <!-- end slide image  -->
+        </div>
+      </div> <!-- end slider item -->
+
+
+      <!-- Start slide  -->
+      <div class="slider-item">
+        <div class="row">
+          <div class="col-lg-6 align-self-center text-center text-md-left mb-4 mb-lg-0">
+            <h3 data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="0" data-animation-out="fadeOutDown" data-delay-out="5.8" data-duration-out=".3">MULTICHANNEL HOMETHEATRE</h3>
+            <h1 data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".2" data-animation-out="fadeOutDown" data-delay-out="5.4" data-duration-out=".3">Powerful and Deep Sound</h1>
+            <h3 class="mb-4" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".4" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-out=".3">Stay Entertained at Home</h3>
+            <p class="mb-4" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".6" data-animation-out="fadeOutDown" data-delay-out="4.6" data-duration-out=".3">Bring Colors to Your Life With Flix</p>
+            <a href="/shop/HOME THEATER/" class="btn btn-primary" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".8" data-animation-out="fadeOutDown" data-delay-out="4.2" data-duration-out=".3">shop now</a>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div class="bg-letter">
+                <!-- background letter -->
+              <span data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1.2" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
+
+              </span>
+              <img class="img-fluid d-unset" src="{%static 'images/hero-area/main3.png' %}" alt="converse" data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
+            </div>
+          </div>
+        </div>
+      </div> 
+      <!-- end slide  -->
+      <div class="slider-item">
+        <div class="row">
+          <div class="col-lg-6 align-self-center text-center text-md-left mb-4 mb-lg-0">
+            <h3 data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="0" data-animation-out="fadeOutDown" data-delay-out="5.8" data-duration-out=".3">SUMMER APPLIANCES CARNIVAL</h3>
+            <h1 data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".2" data-animation-out="fadeOutDown" data-delay-out="5.4" data-duration-out=".3">Home Cooling</h1>
+            <h3 class="mb-4" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".4" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-out=".3">Beat the HEAT</h3>
+            <p class="mb-4" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".6" data-animation-out="fadeOutDown" data-delay-out="4.6" data-duration-out=".3">Upto 40% off!!</p>
+            <a href="/shop/AIR CONDITIONER/" class="btn btn-primary" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".8" data-animation-out="fadeOutDown" data-delay-out="4.2" data-duration-out=".3">shop now</a>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div class="bg-letter">
+                <!-- background letter -->
+              <span data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1.2" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
+
+              </span>
+              <img class="img-fluid d-unset" src="{%static 'images/hero-area/main4.png' %}" alt="converse" data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item">
+        <div class="row">
+          <div class="col-lg-6 align-self-center text-center text-md-left mb-4 mb-lg-0">
+            <h3 data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="0" data-animation-out="fadeOutDown" data-delay-out="5.8" data-duration-out=".3">Health assured Fruit and Veg Juicer</h3>
+            <h1 data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".2" data-animation-out="fadeOutDown" data-delay-out="5.4" data-duration-out=".3">DELICIOUS AND HEALTHY</h1>
+            <h3 class="mb-4" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".4" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-out=".3">Make 100% VEGAN SORBETS FROM NATURAL FRUITS</h3>
+            <p class="mb-4" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".6" data-animation-out="fadeOutDown" data-delay-out="4.6" data-duration-out=".3">Extract Natural Healthy and Tasty Cold Pressed Juice.</p>
+            <a href="/shop/JUICER MIXER/" class="btn btn-primary" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".8" data-animation-out="fadeOutDown" data-delay-out="4.2" data-duration-out=".3">shop now</a>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div class="bg-letter">
+                <!-- background letter -->
+              <span data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1.2" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
+
+              </span>
+              <img class="img-fluid d-unset" src="{%static 'images/hero-area/main5.png' %}" alt="converse" data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item">
+        <div class="row">
+          <div class="col-lg-6 align-self-center text-center text-md-left mb-4 mb-lg-0">
+            <h3 data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in="0" data-animation-out="fadeOutDown" data-delay-out="5.8" data-duration-out=".3">IRON YOUR BEST CREASE</h3>
+            <h1 data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".2" data-animation-out="fadeOutDown" data-delay-out="5.4" data-duration-out=".3">Shop For Dry Steam and Travel Irons</h1>
+            <h3 class="mb-4" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".4" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-out=".3">For easy ironing and retaining the fabric quality</h3>
+            <p class="mb-4" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".6" data-animation-out="fadeOutDown" data-delay-out="4.6" data-duration-out=".3">Best Dry Irons for Wrinkle-Free Clothes</p>
+            <a href="/shop/IRON/" class="btn btn-primary" data-duration-in=".5" data-animation-in="fadeInDown" data-delay-in=".8" data-animation-out="fadeOutDown" data-delay-out="4.2" data-duration-out=".3">shop now</a>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div class="bg-letter">
+                <!-- background letter -->
+              <span data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1.2" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
+
+              </span>
+              <img class="img-fluid d-unset" src="{%static 'images/hero-area/main6.png' %}" alt="converse" data-duration-in=".5" data-animation-in="fadeInRight" data-delay-in="1" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-out=".3">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /hero area
+
+<!-- categories -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-title">Top Categories</h2>
+      </div>
+      <!-- categories item -->
+      <div class="col-lg-4 col-md-6 mb-50">
+        <div class="card p-0">
+          <div class="border-bottom text-center hover-zoom-img">
+            <a href="/shop/TV/"><img src="{%static 'images/categories/product-1.jpg' %}" class="rounded-top img-fluid w-100" alt="product-img"></a>
+          </div>
+          <ul class="d-flex list-unstyled pl-0 categories-list">
+            <li class="m-0 hover-zoom-img">
+              <a href="/shop/TV/"><img src="{% static 'images/categories/product-1-1.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+            <li class="m-0 hover-zoom-img">
+              <a href="/shop/TV/"><img src="{%static 'images/categories/product-1-2.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+            <li class="m-0 hover-zoom-img">
+              <a href="/shop/TV/"><img src="{%static 'images/categories/product-1-3.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+          </ul>
+          <div class="px-4 py-3 border-top">
+            <h4 class="d-inline-block mb-0 mt-1">TV</h4>
+            <a href="/shop/TV/" class="btn btn-sm btn-outline-primary float-right">view more</a>
+          </div>
+        </div>
+      </div>
+      <!-- categories item -->
+      <div class="col-lg-4 col-md-6 mb-50">
+        <div class="card p-0">
+          <div class="border-bottom text-center hover-zoom-img">
+            <a href="/shop/REFRIGERATOR/"><img src="{%static 'images/categories/product-2.jpg' %}" class="rounded-top img-fluid w-100" alt="product-img"></a>
+          </div>
+          <ul class="d-flex list-unstyled pl-0 categories-list">
+            <li class="m-0 hover-zoom-img">
+              <a href="/shop/REFRIGERATOR/"><img src="{% static 'images/categories/product-2-1.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+            <li class="m-0 hover-zoom-img">
+              <a href="/shop/REFRIGERATOR/"><img src="{% static 'images/categories/product-2-2.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+            <li class="m-0 hover-zoom-img">
+              <a href="/shop/REFRIGERATOR/"><img src="{% static 'images/categories/product-2-3.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+          </ul>
+          <div class="px-4 py-3 border-top">
+            <h4 class="d-inline-block mb-0 mt-1">Refrigerators</h4>
+            <a href="/shop/REFRIGERATOR/" class="btn btn-sm btn-outline-primary float-right">view more</a>
+          </div>
+        </div>
+      </div>
+      <!-- categories item -->
+      <div class="col-lg-4 col-md-6 mb-50">
+        <div class="card p-0">
+          <div class="border-bottom text-center hover-zoom-img">
+            <a href="shop/AIR CONDITIONER/"><img src="{%static 'images/categories/product-3.jpg' %}" class="rounded-top img-fluid w-100" alt="product-img"></a>
+          </div>
+          <ul class="d-flex list-unstyled pl-0 categories-list">
+            <li class="m-0 hover-zoom-img">
+              <a href="shop/AIR CONDITIONER/"><img src="{% static 'images/categories/product-3-1.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+            <li class="m-0 hover-zoom-img">
+              <a href="shop/AIR CONDITIONER/"><img src="{% static 'images/categories/product-3-2.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+            <li class="m-0 hover-zoom-img">
+              <a href="shop/AIR CONDITIONER/"><img src="{% static 'images/categories/product-3-3.jpg' %}" class="img-fluid w-100" alt="product-img"></a>
+            </li>
+          </ul>
+          <div class="px-4 py-3 border-top">
+            <h4 class="d-inline-block mb-0 mt-1">Air Conditioners</h4>
+            <a href="shop/AIR CONDITIONER/" class="btn btn-sm btn-outline-primary float-right">view more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /categories -->
+
+<section class="section overlay cta" data-background="{%static 'images/backgrounds/main.jpg' %}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="text-white mb-2">End of Season Sale</h1>
+        <script>
+          var sites = [
+              '/shop/TV/',
+              '/shop/AUDIO/',
+              '/shop/LARGE APPLIANCES/',
+              '/shop/KITCHEN/',
+              '/shop/ELECTRICAL APPLIANCES/'
+          ];
+
+          function randomSite() {
+              var i = parseInt(Math.random() * sites.length);
+              location.href = sites[i];
+          }
+      </script>
+      <a href="#" onclick="randomSite();" class="btn btn-light">shop now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="quickView" class="quickview">
+  <div class="row w-100">
+    <div class="col-lg-6 col-md-6 mb-5 mb-md-0 pl-5 pt-4 pt-lg-0 pl-lg-0">
+      <img src="images/feature/product.png" alt="product-img" class="img-fluid">
+    </div>
+    <div class="col-lg-5 col-md-6 text-center text-md-left align-self-center pl-5">
+     <ul class="list-inline social-icon-alt">
+        <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
+        <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
+        <li class="list-inline-item"><a href="#"><i class="ti-vimeo-alt"></i></a></li>
+        <li class="list-inline-item"><a href="#"><i class="ti-google"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+<!-- service -->
+<section class="section-sm border-top">
+  <div class="container">
+    <div class="row">
+      <!-- service item -->
+      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+        <div class="d-flex flex-sm-row flex-column align-items-center align-items-sm-start">
+          <i class="ti-truck icon-lg mr-4 mb-3 mb-sm-0"></i>
+          <div class="text-center text-sm-left">
+            <h4>Free Shipping</h4>
+            <p class="mb-0 text-gray">Free shipping on oder over ₹ 70,000</p>
+          </div>
+        </div>
+      </div>
+      <!-- service item -->
+      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+        <div class="d-flex flex-sm-row flex-column align-items-center align-items-sm-start">
+          <i class="ti-shield icon-lg mr-4 mb-3 mb-sm-0"></i>
+          <div class="text-center text-sm-left">
+            <h4>Secure Payment</h4>
+            <p class="mb-0 text-gray">We ensure secure payment with PEV</p>
+          </div>
+        </div>
+      </div>
+      <!-- service item -->
+      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+        <div class="d-flex flex-sm-row flex-column align-items-center align-items-sm-start">
+          <i class="ti-timer icon-lg mr-4 mb-3 mb-sm-0"></i>
+          <div class="text-center text-sm-left">
+            <h4>Support 24/7</h4>
+            <p class="mb-0 text-gray">Contact us 24 hours a day, 7 days a week</p>
+          </div>
+        </div>
+      </div>
+      <!-- service item -->
+      <div class="col-lg-3 col-sm-6 mb-4 mb-lg-0">
+        <div class="d-flex flex-sm-row flex-column align-items-center align-items-sm-start">
+          <i class="ti-reload icon-lg mr-4 mb-3 mb-sm-0"></i>
+          <div class="text-center text-sm-left">
+            <h4>15 Days Return</h4>
+            <p class="mb-0 text-gray">Simply return it within 15 days for an exchange.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /service -->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- /Newsletter Modal -->
+
+
+<!-- footer -->
+<footer class="bg-light">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-0 text-center text-sm-left">
+          <h4 class="mb-4">Contact</h4>
+          <p>Phone: +91 9038824853</p>
+          <p>Customer Care: customercare@i4indiaelectronics.com</p>
+          <p>Corporate Enquiry: corporatesales@i4indiaelectronics.com</p>
+          <ul class="list-inline social-icons">
+            <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="ti-vimeo-alt"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="ti-google"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-0 text-center text-sm-left">
+          <h4 class="mb-4">Category</h4>
+          <ul class="pl-0 list-unstyled">
+            <li class="mb-2"><a class="text-color" href="/shop/TV/">TV</a></li>
+            <li class="mb-2"><a class="text-color" href="/shop/AUDIO/">AUDIO</a></li>
+            <li class="mb-2"><a class="text-color" href="/shop/LARGE APPLIANCES/">LARGE APPLIANCES</a></li>
+            <li class="mb-2"><a class="text-color" href="/shop/KITCHEN/">KITCHEN</a></li>
+            <li class="mb-2"><a class="text-color" href="/shop/ELECTRICAL APPLIANCES/">ELECTRICAL APPLIANCES</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-5 mb-md-0 text-center text-sm-left">
+          <h4 class="mb-4">Useful Link</h4>
+          <ul class="pl-0 list-unstyled">
+            <li class="mb-2"><a class="text-color" href="/aboutus/">About Us</a></li>
+            <li class="mb-2"><a class="text-color" href="/services/">Our Services</a></li>
+            <li class="mb-2"><a class="text-color" href="/contact/">Contact Us</a></li>
+            <li class="mb-2"><a class="text-color" href="/career/">Career</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6 text-center text-sm-left">
+          <h4 class="mb-4">Our Policies</h4>
+          <ul class="pl-0 list-unstyled">
+            <li class="mb-2"><a class="text-color" href="/404/">Privacy Policy</a></li>
+            <li class="mb-2"><a class="text-color" href="/404/">Terms & Conditions</a></li>
+            <li class="mb-2"><a class="text-color" href="/404/">Cookie Policy</a></li>
+            <li class="mb-2"><a class="text-color" href="/404/">Terms of Sale</a></li>
+            <li class="mb-2"><a class="text-color" href="/404/">Free Shipping & Returns</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-dark py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 text-center text-md-left mb-4 mb-md-0 align-self-center">
+          <p class="text-white mb-0">Logo &copy; 2018 all right reserved</p>
+        </div>
+        <div class="col-md-2 text-center text-md-left mb-4 mb-md-0">
+          <img src="{% static 'images/logo1.png' %}" height="70px" width="120px" alt="logo">
+        </div>
+        <div class="col-md-5 text-center text-md-right mb-4 mb-md-0">
+          <ul class="list-inline">
+            <li class="list-inline-item"><img class="img-fluid rounded atm-card-img" src="{% static 'images/payment-card/card-1.jpg' %}" alt="card"></li>
+            <li class="list-inline-item"><img class="img-fluid rounded atm-card-img" src="{% static 'images/payment-card/card-2.jpg' %}" alt="card"></li>
+            <li class="list-inline-item"><img class="img-fluid rounded atm-card-img" src="{% static 'images/payment-card/card-3.jpg' %}" alt="card"></li>
+            <li class="list-inline-item"><img class="img-fluid rounded atm-card-img" src="{% static 'images/payment-card/card-4.jpg' %}" alt="card"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+</div>
+<!-- /main wrapper -->
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+<script src="{% static 'plugins/venobox/venobox.min.js' %}"></script>
+<script src="{% static 'plugins/aos/aos.js' %}"></script>
+<script src="{% static 'plugins/syotimer/jquery.syotimer.js' %}"></script>
+<script src="{% static 'plugins/instafeed/instafeed.min.js' %}"></script>
+<script src="{% static 'plugins/zoom-master/jquery.zoom.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap-touchspin-master/jquery.bootstrap-touchspin.min.js' %}"></script>
+<script src="{% static 'plugins/nice-select/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap-slider/bootstrap-slider.min.js' %}"></script>
+<!-- google map -->
+<script src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&amp;libraries=places' %}"></script>
+<script src="{% static 'plugins/google-map/gmap.js' %}"></script>
+<!-- Main Script -->
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+
+<!-- Mirrored from demo.themefisher.com/elite-shop/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Mar 2021 15:05:57 GMT -->
+</html>

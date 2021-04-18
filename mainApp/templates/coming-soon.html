@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+  <!-- preloader start -->
+  <div class="preloader">
+    <img src="{% static 'images/preloader.gif' %}" alt="preloader">
+  </div>
+  <!-- preloader end -->
+
+<section class="coming-soon text-center overlay" data-background="{% static 'images/backgrounds/coming-soon.jpg' %}">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 mx-auto">
+				<div class="block">
+
+					<h1 class="mb-5 text-white">COMING SOON   🕑</h1>
+					<h5 class="mb-2 text-white">SORRY FOR THE INCONVENIENCE <i class="ti-heart"></i></h5>
+					<a href="/" class="btn btn-primary mt-4"><i class="ti-angle-double-left"></i> Go Home</a>
+					<p class="copyright-text text-white mt-3">© 2018 i4india All Rights Reserved</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

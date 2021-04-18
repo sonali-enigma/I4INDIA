@@ -1,0 +1,576 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+<!-- main wrapper -->
+<div class="main-wrapper">
+
+<!-- breadcrumb -->
+<nav class="bg-gray py-3">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Product Single</li>
+    </ol>
+  </div>
+</nav>
+<!-- /breadcrumb -->
+
+<!-- product-single -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <form method="post" >
+          {% csrf_token %}
+        <!-- product image slider -->
+        <div class="product-slider">
+          <div data-image="{{Product.img1.url}}">
+            <img class="img-fluid w-100 image-zoom" src="{{Product.img1.url}}" alt="product-img"
+              data-zoom="{{Product.img1.url}}">
+          </div>
+          {% if Product.img3 %}
+          <div data-image="{{Product.img3.url}}">
+            <img class="img-fluid w-100 image-zoom" src="{{Product.img3.url}}" alt="product-img"
+              data-zoom="{{Product.img3.url}}">
+          </div>
+          {% endif %}
+          {% if Product.img4 %}
+          <div data-image="{{Product.img4.url}}">
+            <img class="img-fluid w-100 image-zoom" src="{{Product.img4.url}}" alt="product-img"
+              data-zoom="{{Product.img4.url}}">
+          </div>
+          {% endif %}
+          {% if Product.img5 %}
+          <div data-image="{{Product.img5.url}}">
+            <img class="img-fluid w-100 image-zoom" src="{{Product.img5.url}}" alt="product-img"
+              data-zoom="{{Product.img5.url}}">
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <!-- produt details -->
+      <div class="col-lg-6 mb-100">
+        <h2>{{Product.name}}</h2>
+        <i class="ti-check-box text-success"></i>
+        <span class="text-success">Instock</span>
+      <!--   <ul class="list-inline mb-4">
+          <li class="list-inline-item mx-0"><a href="#" class="rated"><i class="ti-star"></i></a></li>
+          <li class="list-inline-item mx-0"><a href="#" class="rated"><i class="ti-star"></i></a></li>
+          <li class="list-inline-item mx-0"><a href="#" class="rated"><i class="ti-star"></i></a></li>
+          <li class="list-inline-item mx-0"><a href="#" class="rated"><i class="ti-star"></i></a></li>
+          <li class="list-inline-item mx-0"><a href="#" class="rated"><i class="ti-star"></i></a></li>
+         <li class="list-inline-item"><a href="#" class="text-gray ml-3">( 3 Reviews )</a></li>
+        </ul> -->
+        <br>
+        <br>
+        <h4 class="text-primary h3">₹ {{Product.finalPrice}} <s class="text-color ml-2">₹ {{Product.basePrice}}</s></h4>
+        <h6 class="mb-4">Discount: <span class="text-primary">{{Product.discount}}%</span></h6>
+        <h3>Quantity</h3>
+       <div class="d-flex flex-column flex-sm-row justify-content-between mb-2">
+
+          <input style="border-radius:20px; height:50px; width:70px;"  min="1" max="10" name="q" type="number" value="1"/>
+
+<!--          <input class="quantity mr-sm-2 mb-3 mb-sm-0" type="number" value="1" name="quantity"/>-->
+          </div>
+        <button type="submit" class="btn btn-primary mb-4" >add to cart</button>
+  <!--         <select class="form-control mx-sm-2 mb-3 mb-sm-0" name="color">
+            <option value="brown">Brown Color</option>
+            <option value="gray">Gray Color</option>
+            <option value="black">Black Color</option>
+          </select>
+
+          <select class="form-control ml-sm-2 mb-3 mb-sm-0" name="size">
+            <option class="form-control" value="small">Small Size</option>
+            <option value="medium">Medium Size</option>
+            <option value="large">Large Size</option>
+          </select>
+        </div>-->
+  
+        <h4 class="mb-3"><span class="text-primary">Hurry up!</span> Sale ends soon!!</h4>
+        <!-- syo-timer -->
+        <div class="syotimer dark">
+          <div id="sale-timer" data-year="2021" data-month="5" data-day="1" data-hour="1"></div>
+        </div>
+        </form>
+        <hr><!--
+        <div class="payment-option border border-primary mt-5 mb-4">
+          <h5 class="bg-white">Guaranted Safe Checkout</h5>
+          <img class="img-fluid w-100 p-3" src="images/payment-card/all-card.png" alt="payment-card">
+        </div>-->
+        <h5 class="mb-3">4 Great Reason to Buy From Us</h5>
+        <div class="row">
+          <!-- service item -->
+          <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+            <div class="d-flex">
+              <i class="ti-truck icon-md mr-3"></i>
+              <div class="align-items-center">
+                <h6>Free Shipping</h6>
+              </div>
+            </div>
+          </div>
+          <!-- service item -->
+          <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+            <div class="d-flex">
+              <i class="ti-shield icon-md mr-3"></i>
+              <div class="align-items-center">
+                <h6>Secure Payment</h6>
+              </div>
+            </div>
+          </div>
+          <!-- service item -->
+          <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+            <div class="d-flex">
+              <i class="ti-money icon-md mr-3"></i>
+              <div class="align-items-center">
+                <h6>Lowest Price</h6>
+              </div>
+            </div>
+          </div>
+          <!-- service item -->
+          <div class="col-lg-3 col-6 mb-4 mb-lg-0">
+            <div class="d-flex">
+              <i class="ti-reload icon-md mr-3"></i>
+              <div class="align-items-center">
+                <h6>30 Days Return</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% if Product.subcategory.name == "AIR COOLER" %}
+      <div class="col-lg-12">
+        <br><br><br>
+        <h2 class="mb-3">Specifications:</h2><br>
+        <h4 class="mb-3">Product Description</h4>
+        <p class="text-gray mb-4">{{Product.desc}}</p>
+        {% if Product.feature %}
+        <h4>Features</h4>
+        {% endif %}
+        <p class="text-gray mb-4">{{Product.feature}}</p>
+        <h4>Brand</h4>
+        <p class="text-gray mb-4">{{Product.brand}}</p>
+        <h4>Model</h4>
+        <p class="text-gray mb-4">{{Product.model}}</p>
+        <h4>Color</h4>
+        <p class="text-gray mb-4">{{Product.color}}</p>
+        <h4>Power</h4>
+        <p class="text-gray mb-4">{{Product.power}}</p>
+        <h4>Rating</h4>
+        <p class="text-gray mb-4">{{Product.rating}}</p>
+        <h4>Air Flow Capacity</h4>
+        <p class="text-gray mb-4">{{Product.airFlowCapacity}}</p>
+        <h4>Cooling Pad</h4>
+        <p class="text-gray mb-4">{{Product.coolingPad}}</p>
+        <h4>Tank Capacity</h4>
+        <p class="text-gray mb-4">{{Product.tankCapacity}}</p>
+        <h4>Standard Room Dimension</h4>
+        <p class="text-gray mb-4">{{Product.standardRoomDimension}}</p>
+        <h4>Water Consumption</h4>
+        <p class="text-gray mb-4">{{Product.waterConsumption}}</p>
+        <h4>Wind Speed</h4>
+        <p class="text-gray mb-4">{{Product.windSpeed}}</p>
+        <h4>Cooling Heating</h4>
+        <p class="text-gray mb-4">{{Product.coolingHeating}}</p>
+        <h4>Feature</h4>
+        <p class="text-gray mb-4">{{Product.feature}}</p>
+        <h4>Warranty Period</h4>
+        <p class="text-gray mb-4">{{Product.warrantyPeriod}}</p>
+        <h4>Warranty Type</h4>
+        <p class="text-gray mb-4">{{Product.warrantyType}}</p>
+        <h4>Box Content</h4>
+        <p class="text-gray mb-4">{{Product.boxContent}}</p>
+
+
+      </div>
+      {% elif Product.subcategory.name == "REFRIGERATOR" %}
+      <div class="col-lg-12">
+        <br><br><br>
+        <h2 class="mb-3">Specifications:</h2><br>
+        <h4 class="mb-3">Product Description</h4>
+        <p class="text-gray mb-4">{{Product.desc}}</p>
+        <h4>Brand</h4>
+        <p class="text-gray mb-4">{{Product.brand}}</p>
+        <h4>Model</h4>
+        <p class="text-gray mb-4">{{Product.model}}</p>
+        <h4>Capacity</h4>
+        <p class="text-gray mb-4">{{Product.capacity}}</p>
+        <h4>Star Rating</h4>
+        <p class="text-gray mb-4">{{Product.starRating}}</p>
+        <h4>Cooling Technology</h4>
+        <p class="text-gray mb-4">{{Product.coolingTechnology}}</p>
+        <h4>Colour</h4>
+        <p class="text-gray mb-4">{{Product.colour}}</p>
+        <h4>Inverter Compressor</h4>
+        <p class="text-gray mb-4">{{Product.inverterCompressor}}</p>
+        <h4>Defrosting Type</h4>
+        <p class="text-gray mb-4">{{Product.defrostingType}}</p>
+        <h4>Exteriors</h4>
+        <p class="text-gray mb-4">{{Product.exteriors}}</p>
+        <h4>No Of Shelves</h4>
+        <p class="text-gray mb-4">{{Product.noOfShelves}}</p>
+        <h4>Special Compartments</h4>
+        <p class="text-gray mb-4">{{Product.specialCompartments}}</p>
+        <h4>Shelves Type</h4>
+        <p class="text-gray mb-4">{{Product.shelvesType}}</p>
+        <h4>Vegetable Basket</h4>
+        <p class="text-gray mb-4">{{Product.vegetableBasket}}</p>
+        <h4>Dimensions</h4>
+        <p class="text-gray mb-4">{{Product.dimensions}}</p>
+        <h4>Weight in Kg</h4>
+        <p class="text-gray mb-4">{{Product.weightinKg}}</p>
+        <h4>Unit Warranty</h4>
+        <p class="text-gray mb-4">{{Product.unitWarranty}}</p>
+        <h4>Compressor Warranty</h4>
+        <p class="text-gray mb-4">{{Product.compressorWarranty}}</p>
+        <h4>Warranty Type</h4>
+        <p class="text-gray mb-4">{{Product.warrantyType}}</p>
+        <h4>Box Content</h4>
+        <p class="text-gray mb-4">{{Product.boxContent}}</p>
+
+
+      </div>
+
+      {% elif Product.subcategory.name == "ATTA CHAKKI" %}
+      <div class="col-lg-12">
+        <br><br><br>
+        <h2 class="mb-3">Specifications:</h2><br>
+        <h4 class="mb-3">Product Description</h4>
+        <p class="text-gray mb-4">{{Product.desc}}</p>
+        <h4>Brand</h4>
+        <p class="text-gray mb-4">{{Product.brand}}</p>
+        <h4>Model</h4>
+        <p class="text-gray mb-4">{{Product.model}}</p>
+        <h4>HP</h4>
+        <p class="text-gray mb-4">{{Product.HP}}</p>
+        <h4>LBH</h4>
+        <p class="text-gray mb-4">{{Product.LBH}}</p>
+        <h4>Weight</h4>
+        <p class="text-gray mb-4">{{Product.Weight}}</p>
+        <h4>Grinding Capacity</h4>
+        <p class="text-gray mb-4">{{Product.grindingCapacity}}</p>
+        <h4>Hopper Capacity</h4>
+        <p class="text-gray mb-4">{{Product.hopperCapacity}}</p>
+        <h4>Power Consumption</h4>
+        <p class="text-gray mb-4">{{Product.powerConsumption}}</p>
+        <h4>Warranty Period</h4>
+        <p class="text-gray mb-4">{{Product.warrantyPeriod}}</p>
+        <h4>Warranty Type</h4>
+        <p class="text-gray mb-4">{{Product.warrantyType}}</p>
+        <h4>Box Content</h4>
+        <p class="text-gray mb-4">{{Product.boxContent}}</p>
+
+
+      </div>
+
+      {% elif Product.subcategory.name == "HOT PLATE" %}
+      <div class="col-lg-12">
+        <br><br><br>
+        <h2 class="mb-3">Specifications:</h2><br>
+        <h4 class="mb-3">Product Description</h4>
+        <p class="text-gray mb-4">{{Product.desc}}</p>
+        <h4>Brand</h4>
+        <p class="text-gray mb-4">{{Product.brand}}</p>
+        <h4>Model</h4>
+        <p class="text-gray mb-4">{{Product.model}}</p>
+        <h4>Colour</h4>
+        <p class="text-gray mb-4">{{Product.colour}}</p>
+        <h4>Power</h4>
+        <p class="text-gray mb-4">{{Product.power}}</p>
+        <h4>Rating</h4>
+        <p class="text-gray mb-4">{{Product.rating}}</p>
+        <h4>Input Voltage</h4>
+        <p class="text-gray mb-4">{{Product.inputVoltage}}</p>
+        <h4>Power Indicator</h4>
+        <p class="text-gray mb-4">{{Product.powerIndicator}}</p>
+        <h4>Temperature Adjuster</h4>
+        <p class="text-gray mb-4">{{Product.temperatureAdjuster}}</p>
+        <h4>Warranty Period</h4>
+        <p class="text-gray mb-4">{{Product.warrantyPeriod}}</p>
+        <h4>Warranty Type</h4>
+        <p class="text-gray mb-4">{{Product.warrantyType}}</p>
+        <h4>Box Content</h4>
+        <p class="text-gray mb-4">{{Product.boxContent}}</p>
+
+
+      </div>
+
+      {% elif Product.subcategory.name == "TV" %}
+      <div class="col-lg-12">
+        <br><br><br>
+        <h2 class="mb-3">Specifications:</h2><br>
+        <h4 class="mb-3">Product Description</h4>
+        <p class="text-gray mb-4">{{Product.desc}}</p>
+        <h4>Screen Size</h4>
+        <p class="text-gray mb-4">{{Product.screenSize}}</p>
+        <h4>Brand</h4>
+        <p class="text-gray mb-4">{{Product.brand}}</p>
+        <h4>Model</h4>
+        <p class="text-gray mb-4">{{Product.model}}</p>
+        <h4>Screen Type</h4>
+        <p class="text-gray mb-4">{{Product.screenType}}</p>
+        <h4>Resolution</h4>
+        <p class="text-gray mb-4">{{Product.resolution}}</p>
+        <h4>Refresh Rate</h4>
+        <p class="text-gray mb-4">{{Product.refreshRate}}</p>
+        <h4>HDMI</h4>
+        <p class="text-gray mb-4">{{Product.hdmi}}</p>
+        <h4>BlueRay Players</h4>
+        <p class="text-gray mb-4">{{Product.blueRayPlayers}}</p>
+        <h4>Gaming Console</h4>
+        <p class="text-gray mb-4">{{Product.gamingConsole}}</p>
+        <h4>Sound</h4>
+        <p class="text-gray mb-4">{{Product.sound}}</p>
+        <h4>Mega Contrast</h4>
+        <p class="text-gray mb-4">{{Product.megaContrast}}</p>
+        <h4>Purcolor</h4>
+        <p class="text-gray mb-4">{{Product.purcolor}}</p>
+        <h4>Picture Quality</h4>
+        <p class="text-gray mb-4">{{Product.pictureQuality}}</p>
+        <h4>Design</h4>
+        <p class="text-gray mb-4">{{Product.design}}</p>
+        <h4>Speaker</h4>
+        <p class="text-gray mb-4">{{Product.speaker}}</p>
+        <h4>USB</h4>
+        <p class="text-gray mb-4">{{Product.usb}}</p>
+        <h4>Composite In</h4>
+        <p class="text-gray mb-4">{{Product.compositeIn}}</p>
+        <h4>Headphone Out</h4>
+        <p class="text-gray mb-4">{{Product.headphoneOut}}</p>
+        <h4>Wall Mount</h4>
+         <p class="text-gray mb-4">{{Product.wallMount}}</p>
+        <h4>Additional Features</h4>
+         <p class="text-gray mb-4">{{Product.additionalFeatures}}</p>
+        <h4>Power Supply</h4>
+         <p class="text-gray mb-4">{{Product.powerSupply}}</p>
+        <h4>Standby</h4>
+         <p class="text-gray mb-4">{{Product.standby}}</p>
+        <h4>Dimensions</h4>
+         <p class="text-gray mb-4">{{Product.dimensions}}</p>
+        <h4>Weight in Kg</h4>
+         <p class="text-gray mb-4">{{Product.weightinKg}}</p>
+        <h4>Warranty Period</h4>
+         <p class="text-gray mb-4">{{Product.warrantyPeriod}}</p>
+        <h4>Warranty Type</h4>
+        <p class="text-gray mb-4">{{Product.warrantyType}}</p>
+        <h4>Box Content</h4>
+        <p class="text-gray mb-4">{{Product.boxContent}}</p>
+
+
+      </div>
+
+      {% elif Product.subcategory.name == "IRON" %}
+      <div class="col-lg-12">
+        <br><br><br>
+        <h2 class="mb-3">Specifications:</h2><br>
+        <h4 class="mb-3">Product Description</h4>
+        <p class="text-gray mb-4">{{Product.desc}}</p>
+        <h4>Brand</h4>
+        <p class="text-gray mb-4">{{Product.brand}}</p>
+        <h4>Model</h4>
+        <p class="text-gray mb-4">{{Product.model}}</p>
+        <h4>Type</h4>
+        <p class="text-gray mb-4">{{Product.type}}</p>
+        <h4>Colour</h4>
+        <p class="text-gray mb-4">{{Product.colour}}</p>
+        <h4>Body Material</h4>
+        <p class="text-gray mb-4">{{Product.bodyMaterial}}</p>
+        <h4>Corded</h4>
+        <p class="text-gray mb-4">{{Product.corded}}</p>
+        <h4>Swivel Cord</h4>
+        <p class="text-gray mb-4">{{Product.swivelCord}}</p>
+        <h4>Indicator Light</h4>
+        <p class="text-gray mb-4">{{Product.indicatorLight}}</p>
+        <h4>Temprature Control</h4>
+        <p class="text-gray mb-4">{{Product.tempratureControl}}</p>
+        <h4>Sole Plate Type</h4>
+        <p class="text-gray mb-4">{{Product.solePlateType}}</p>
+        <h4>Power</h4>
+        <p class="text-gray mb-4">{{Product.power}}</p>
+        <h4>Voltage</h4>
+        <p class="text-gray mb-4">{{Product.voltage}}</p>
+        <h4>Dimensions</h4>
+        <p class="text-gray mb-4">{{Product.dimensions}}</p>
+        <h4>Weight</h4>
+        <p class="text-gray mb-4">{{Product.weight}}</p>
+        <h4>Warranty Period</h4>
+        <p class="text-gray mb-4">{{Product.warrantyPeriod}}</p>
+        <h4>Warranty Type</h4>
+        <p class="text-gray mb-4">{{Product.warrantyType}}</p>
+        <h4>Box Content</h4>
+        <p class="text-gray mb-4">{{Product.boxContent}}</p>
+
+
+      </div>
+
+      {% elif Product.subcategory.name == "HOME THEATER" %}
+      <div class="col-lg-12">
+        <br><br><br>
+        <h2 class="mb-3">Specifications:</h2><br>
+        <h4 class="mb-3">Product Description</h4>
+        <p class="text-gray mb-4">{{Product.desc}}</p>
+        <h4>Brand</h4>
+        <p class="text-gray mb-4">{{Product.brand}}</p>
+        <h4>Model</h4>
+        <p class="text-gray mb-4">{{Product.model}}</p>
+        <h4>Colour</h4>
+        <p class="text-gray mb-4">{{Product.colour}}</p>
+        <h4>Supports USB AD AUX FM Bluetooth</h4>
+        <p class="text-gray mb-4">{{Product.supportsUSB_AD_AUX_FM_Bluetooth}}</p>
+        <h4>LED Display</h4>
+        <p class="text-gray mb-4">{{Product.LEDDisplay}}</p>
+        <h4>Picture Quality</h4>
+        <p class="text-gray mb-4">{{Product.pictureQuality}}</p>
+        <h4>Woofer Speaker Drive</h4>
+        <p class="text-gray mb-4">{{Product.wooferSpeakerDrive}}</p>
+        <h4>Impedance</h4>
+        <p class="text-gray mb-4">{{Product.impedance}}</p>
+        <h4>Remote Sensitivity</h4>
+        <p class="text-gray mb-4">{{Product.remoteSensitivity}}</p>
+        <h4>Input Power Range</h4>
+        <p class="text-gray mb-4">{{Product.inputPowerRange}}</p>
+        <h4>Warranty Period</h4>
+        <p class="text-gray mb-4">{{Product.warrantyPeriod}}</p>
+        <h4>Warranty Type</h4>
+        <p class="text-gray mb-4">{{Product.warrantyType}}</p>
+        <h4>Box Content</h4>
+        <p class="text-gray mb-4">{{Product.boxContent}}</p>
+
+
+      </div>
+
+       {% elif Product.subcategory.name == "TOWER THEATER" %}
+      <div class="col-lg-12">
+        <br><br><br>
+        <h2 class="mb-3">Specifications:</h2><br>
+        <h4 class="mb-3">Product Description</h4>
+        <p class="text-gray mb-4">{{Product.desc}}</p>
+        <h4>Brand</h4>
+        <p class="text-gray mb-4">{{Product.brand}}</p>
+        <h4>Model</h4>
+        <p class="text-gray mb-4">{{Product.model}}</p>
+        <h4>Colour</h4>
+        <p class="text-gray mb-4">{{Product.colour}}</p>
+        <h4>Speaker Drive Range Size</h4>
+        <p class="text-gray mb-4">{{speakerDriveRangeSize}}</p>
+        <h4>Tweeter Type</h4>
+        <p class="text-gray mb-4">{{Product.tweeterType}}</p>
+        <h4>Impedance</h4>
+        <p class="text-gray mb-4">{{Product.impedance}}</p>
+        <h4>Frequency Response Range</h4>
+        <p class="text-gray mb-4">{{Product.frequencyResponseRange}}</p>
+        <h4>Tweeter</h4>
+        <p class="text-gray mb-4">{{Product.tweeter}}</p>
+        <h4>SN ratio</h4>
+        <p class="text-gray mb-4">{{Product.SNratio}}</p>
+        <h4>Sepration</h4>
+        <p class="text-gray mb-4">{{Product.Sepration}}</p>
+        <h4>Sensitivity</h4>
+        <p class="text-gray mb-4">{{Product.sensitivity}}</p>
+        <h4>Remote Sensitivity</h4>
+        <p class="text-gray mb-4">{{Product.remoteSensitivity}}</p>
+        <h4>Input Power Range</h4>
+        <p class="text-gray mb-4">{{Product.inputPowerRange}}</p>
+        <h4>Feature</h4>
+        <p class="text-gray mb-4">{{Product.feature}}</p>
+        <h4>Warranty Period</h4>
+        <p class="text-gray mb-4">{{Product.warrantyPeriod}}</p>
+        <h4>Warranty Type</h4>
+        <p class="text-gray mb-4">{{Product.warrantyType}}</p>
+        <h4>Box Content</h4>
+        <p class="text-gray mb-4">{{Product.boxContent}}</p>
+
+
+      </div>
+
+      {% elif Product.subcategory.name == "JUICER MIXER" %}
+      <div class="col-lg-12">
+        <br><br><br>
+        <h2 class="mb-3">Specifications:</h2><br>
+        <h4 class="mb-3">Product Description</h4>
+        <p class="text-gray mb-4">{{Product.desc}}</p>
+        <h4>Screen Size</h4>
+        <p class="text-gray mb-4">{{Product.screenSize}}</p>
+        <h4>Brand</h4>
+        <p class="text-gray mb-4">{{Product.brand}}</p>
+        <h4>Model</h4>
+        <p class="text-gray mb-4">{{Product.model}}</p>
+        <h4>Power</h4>
+        <p class="text-gray mb-4">{{Product.power}}</p>
+        <h4>Rating</h4>
+        <p class="text-gray mb-4">{{Product.rating}}</p>
+        <h4>Stainless Steel Jar</h4>
+        <p class="text-gray mb-4">{{Product.stainlessSteelJar}}</p>
+        <h4>Copper Motor</h4>
+        <p class="text-gray mb-4">{{Product.copperMotor}}</p>
+        <h4>Feature</h4>
+        <p class="text-gray mb-4">{{Product.feature}}</p>
+        <h4>Warranty Period</h4>
+        <p class="text-gray mb-4">{{Product.warrantyPeriod}}</p>
+        <h4>Warranty Type</h4>
+        <p class="text-gray mb-4">{{Product.warrantyType}}</p>
+        <h4>Box Content</h4>
+        <p class="text-gray mb-4">{{Product.boxContent}}</p>
+
+
+      </div>
+
+      {% elif Product.subcategory.name == "JUICER MIXER GRINDER" %}
+      <div class="col-lg-12">
+        <br><br><br>
+        <h2 class="mb-3">Specifications:</h2><br>
+        <h4 class="mb-3">Product Description</h4>
+        <p class="text-gray mb-4">{{Product.desc}}</p>
+        <h4>Type</h4>
+        <p class="text-gray mb-4">{{Product.type}}</p>
+        <h4>Brand</h4>
+        <p class="text-gray mb-4">{{Product.brand}}</p>
+        <h4>Model</h4>
+        <p class="text-gray mb-4">{{Product.model}}</p>
+        <h4>No Of Jars</h4>
+        <p class="text-gray mb-4">{{Product.noOfJars}}</p>
+        <h4>Functions</h4>
+        <p class="text-gray mb-4">{{Product.functions}}</p>
+        <h4>Body Shape</h4>
+        <p class="text-gray mb-4">{{Product.bodyShape}}</p>
+        <h4>Body Material</h4>
+        <p class="text-gray mb-4">{{Product.bodyMaterial}}</p>
+        <h4>Jar Material</h4>
+        <p class="text-gray mb-4">{{Product.jarMaterial}}</p>
+        <h4>Blade Material</h4>
+        <p class="text-gray mb-4">{{Product.bladeMaterial}}</p>
+        <h4>No Of Speed Settings</h4>
+        <p class="text-gray mb-4">{{Product.noOfSpeedSettings}}</p>
+        <h4>Chutney Jar</h4>
+        <p class="text-gray mb-4">{{Product.chutneyJar}}</p>
+        <h4>Main Jai</h4>
+        <p class="text-gray mb-4">{{Product.mainJai}}</p>
+        <h4>Middle Jar</h4>
+        <p class="text-gray mb-4">{{Product.middleJar}}</p>
+        <h4>Features</h4>
+        <p class="text-gray mb-4">{{Product.features}}</p>
+        <h4>Power</h4>
+        <p class="text-gray mb-4">{{Product.power}}</p>
+        <h4>Voltage</h4>
+        <p class="text-gray mb-4">{{Product.voltage}}</p>
+        <h4>Rating</h4>
+        <p class="text-gray mb-4">{{Product.rating}}</p>
+        <h4>Dimensions</h4>
+        <p class="text-gray mb-4">{{Product.dimensions}}</p>
+        <h4>Weigth</h4>
+         <p class="text-gray mb-4">{{Product.weigth}}</p>
+        <h4>Warranty Period</h4>
+         <p class="text-gray mb-4">{{Product.warrantyPeriod}}</p>
+        <h4>Warranty Type</h4>
+        <p class="text-gray mb-4">{{Product.warrantyType}}</p>
+        <h4>Box Content</h4>
+        <p class="text-gray mb-4">{{Product.boxContent}}</p>
+
+
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<!-- /product-single -->
+
+{% endblock %}

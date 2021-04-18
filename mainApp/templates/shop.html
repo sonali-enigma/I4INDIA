@@ -1,0 +1,348 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+<!-- main wrapper -->
+<div class="main-wrapper">
+
+<!-- breadcrumb -->
+<nav class="bg-gray py-3">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Shop</li>
+    </ol>
+  </div>
+</nav>
+<!-- /breadcrumb -->
+
+      <!-- product-list -->
+      <div class="col-lg-12">
+        <div class="row">
+          <!-- product -->
+          {% for i in Product %}
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="product text-center">
+              <div class="product-thumb">
+                <div class="overflow-hidden position-relative">
+                  <a href="/product/{{i.subcategory.name}}/{{i.id}}/">
+                    <img class="img-fluid w-50 mb-3 img-first" src="{{i.img1.url}}" alt="product-img">
+                    <img class="img-fluid  mb-3 img-second" src="{{i.img2.url}}" alt="product-img">
+                  </a>
+                  <div class="btn-cart">
+                      <a href="/product/{{i.subcategory.name}}/{{i.id}}/" class="btn btn-primary btn-sm">View Product</a>
+                  </div>
+                </div>
+                <div class="product-hover-overlay">
+                  <a href="/wishlist/{{i.subcategory.name}}/{{i.id}}/" class="product-icon favorite" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+                      class="ti-heart"></i></a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="h5"><a class="text-color" href="/product/{{i.subcategory.name}}/{{i.id}}/">{{i.name}}</a></h3>
+                <span class="h5"><b>₹ {{i.finalPrice}}</b></span>
+              </div>
+              <!-- product label badge -->
+              <div class="product-label sale">
+                -{{i.discount}}%
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% if Product2 %}
+          {% for i in Product2 %}
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="product text-center">
+              <div class="product-thumb">
+                <div class="overflow-hidden position-relative">
+                  <a href="/product/{{i.subcategory.name}}/{{i.id}}/">
+                    <img class="img-fluid w-50 mb-3 img-first" src="{{i.img1.url}}" alt="product-img">
+                    <img class="img-fluid  mb-3 img-second" src="{{i.img2.url}}" alt="product-img">
+                  </a>
+                  <div class="btn-cart">
+                      <a href="/product/{{i.subcategory.name}}/{{i.id}}/" class="btn btn-primary btn-sm">View Product</a>
+                  </div>
+                </div>
+                <div class="product-hover-overlay">
+                  <a href="/wishlist/{{i.subcategory}}/{{i.id}}/" class="product-icon favorite" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+                      class="ti-heart"></i></a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="h5"><a class="text-color" href="/product/{{i.subcategory.name}}/{{i.id}}/">{{i.name}}</a></h3>
+                <span class="h5"><b>₹ {{i.finalPrice}}</b></span>
+              </div>
+              <!-- product label badge -->
+              <div class="product-label sale">
+                -{{i.discount}}%
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+          {% if Product3 %}
+          {% for i in Product3 %}
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="product text-center">
+              <div class="product-thumb">
+                <div class="overflow-hidden position-relative">
+                  <a href="/product/{{i.subcategory.name}}/{{i.id}}/">
+                    <img class="img-fluid w-50 mb-3 img-first" src="{{i.img1.url}}" alt="product-img">
+                    <img class="img-fluid  mb-3 img-second" src="{{i.img2.url}}" alt="product-img">
+                  </a>
+                  <div class="btn-cart">
+                      <a href="/product/{{i.subcategory.name}}/{{i.id}}/" class="btn btn-primary btn-sm">View Product</a>
+                  </div>
+                </div>
+                <div class="product-hover-overlay">
+                  <a href="/wishlist/{{i.subcategory}}/{{i.id}}/" class="product-icon favorite" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+                      class="ti-heart"></i></a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="h5"><a class="text-color" href="/product/{{i.subcategory.name}}/{{i.id}}/">{{i.name}}</a></h3>
+                <span class="h5"><b>₹ {{i.finalPrice}}</b></span>
+              </div>
+              <!-- product label badge -->
+              <div class="product-label sale">
+                -{{i.discount}}%
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+          {% if Product4 %}
+          {% for i in Product4 %}
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="product text-center">
+              <div class="product-thumb">
+                <div class="overflow-hidden position-relative">
+                  <a href="/product/{{i.subcategory.name}}/{{i.id}}/">
+                    <img class="img-fluid w-50 mb-3 img-first" src="{{i.img1.url}}" alt="product-img">
+                    <img class="img-fluid  mb-3 img-second" src="{{i.img2.url}}" alt="product-img">
+                  </a>
+                  <div class="btn-cart">
+                      <a href="/product/{{i.subcategory.name}}/{{i.id}}/" class="btn btn-primary btn-sm">View Product</a>
+                  </div>
+                </div>
+                <div class="product-hover-overlay">
+                  <a href="/wishlist/{{i.subcategory}}/{{i.id}}/" class="product-icon favorite" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+                      class="ti-heart"></i></a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="h5"><a class="text-color" href="/product/{{i.subcategory.name}}/{{i.id}}/">{{i.name}}</a></h3>
+                <span class="h5"><b>₹ {{i.finalPrice}}</b></span>
+              </div>
+              <!-- product label badge -->
+              <div class="product-label sale">
+                -{{i.discount}}%
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+          {% if Product5 %}
+          {% for i in Product5 %}
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="product text-center">
+              <div class="product-thumb">
+                <div class="overflow-hidden position-relative">
+                  <a href="/product/{{i.subcategory.name}}/{{i.id}}/">
+                    <img class="img-fluid w-50 mb-3 img-first" src="{{i.img1.url}}" alt="product-img">
+                    <img class="img-fluid  mb-3 img-second" src="{{i.img2.url}}" alt="product-img">
+                  </a>
+                  <div class="btn-cart">
+                      <a href="/product/{{i.subcategory.name}}/{{i.id}}/" class="btn btn-primary btn-sm">View Product</a>
+                  </div>
+                </div>
+                <div class="product-hover-overlay">
+                  <a href="/wishlist/{{i.subcategory}}/{{i.id}}/" class="product-icon favorite" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+                      class="ti-heart"></i></a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="h5"><a class="text-color" href="/product/{{i.subcategory.name}}/{{i.id}}/">{{i.name}}</a></h3>
+                <span class="h5"><b>₹ {{i.finalPrice}}</b></span>
+              </div>
+              <!-- product label badge -->
+              <div class="product-label sale">
+                -{{i.discount}}%
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+          {% if Product6 %}
+          {% for i in Product6 %}
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="product text-center">
+              <div class="product-thumb">
+                <div class="overflow-hidden position-relative">
+                  <a href="/product/{{i.subcategory.name}}/{{i.id}}/">
+                    <img class="img-fluid w-50 mb-3 img-first" src="{{i.img1.url}}" alt="product-img">
+                    <img class="img-fluid  mb-3 img-second" src="{{i.img2.url}}" alt="product-img">
+                  </a>
+                  <div class="btn-cart">
+                      <a href="/product/{{i.subcategory.name}}/{{i.id}}/" class="btn btn-primary btn-sm">View Product</a>
+                  </div>
+                </div>
+                <div class="product-hover-overlay">
+                  <a href="/wishlist/{{i.subcategory}}/{{i.id}}/" class="product-icon favorite" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+                      class="ti-heart"></i></a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="h5"><a class="text-color" href="/product/{{i.subcategory.name}}/{{i.id}}/">{{i.name}}</a></h3>
+                <span class="h5"><b>₹ {{i.finalPrice}}</b></span>
+              </div>
+              <!-- product label badge -->
+              <div class="product-label sale">
+                -{{i.discount}}%
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+          {% if Product7 %}
+          {% for i in Product7 %}
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="product text-center">
+              <div class="product-thumb">
+                <div class="overflow-hidden position-relative">
+                  <a href="/product/{{i.subcategory.name}}/{{i.id}}/">
+                    <img class="img-fluid w-50 mb-3 img-first" src="{{i.img1.url}}" alt="product-img">
+                    <img class="img-fluid  mb-3 img-second" src="{{i.img2.url}}" alt="product-img">
+                  </a>
+                  <div class="btn-cart">
+                      <a href="/product/{{i.subcategory.name}}/{{i.id}}/" class="btn btn-primary btn-sm">View Product</a>
+                  </div>
+                </div>
+                <div class="product-hover-overlay">
+                  <a href="/wishlist/{{i.subcategory}}/{{i.id}}/" class="product-icon favorite" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+                      class="ti-heart"></i></a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="h5"><a class="text-color" href="/product/{{i.subcategory.name}}/{{i.id}}/">{{i.name}}</a></h3>
+                <span class="h5"><b>₹ {{i.finalPrice}}</b></span>
+              </div>
+              <!-- product label badge -->
+              <div class="product-label sale">
+                -{{i.discount}}%
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+          {% if Product8 %}
+          {% for i in Product8 %}
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="product text-center">
+              <div class="product-thumb">
+                <div class="overflow-hidden position-relative">
+                  <a href="/product/{{i.subcategory.name}}/{{i.id}}/">
+                    <img class="img-fluid w-50 mb-3 img-first" src="{{i.img1.url}}" alt="product-img">
+                    <img class="img-fluid  mb-3 img-second" src="{{i.img2.url}}" alt="product-img">
+                  </a>
+                  <div class="btn-cart">
+                      <a href="/product/{{i.subcategory.name}}/{{i.id}}/" class="btn btn-primary btn-sm">View Product</a>
+                  </div>
+                </div>
+                <div class="product-hover-overlay">
+                  <a href="/wishlist/{{i.subcategory}}/{{i.id}}/" class="product-icon favorite" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+                      class="ti-heart"></i></a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="h5"><a class="text-color" href="/product/{{i.subcategory.name}}/{{i.id}}/">{{i.name}}</a></h3>
+                <span class="h5"><b>₹ {{i.finalPrice}}</b></span>
+              </div>
+              <!-- product label badge -->
+              <div class="product-label sale">
+                -{{i.discount}}%
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+          {% if Product9 %}
+          {% for i in Product9 %}
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="product text-center">
+              <div class="product-thumb">
+                <div class="overflow-hidden position-relative">
+                  <a href="/product/{{i.subcategory.name}}/{{i.id}}/">
+                    <img class="img-fluid w-50 mb-3 img-first" src="{{i.img1.url}}" alt="product-img">
+                    <img class="img-fluid  mb-3 img-second" src="{{i.img2.url}}" alt="product-img">
+                  </a>
+                  <div class="btn-cart">
+                      <a href="/product/{{i.subcategory.name}}/{{i.id}}/" class="btn btn-primary btn-sm">View Product</a>
+                  </div>
+                </div>
+                <div class="product-hover-overlay">
+                  <a href="/wishlist/{{i.subcategory}}/{{i.id}}/" class="product-icon favorite" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+                      class="ti-heart"></i></a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="h5"><a class="text-color" href="/product/{{i.subcategory.name}}/{{i.id}}/">{{i.name}}</a></h3>
+                <span class="h5"><b>₹ {{i.finalPrice}}</b></span>
+              </div>
+              <!-- product label badge -->
+              <div class="product-label sale">
+                -{{i.discount}}%
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+
+          {% if Product10 %}
+          {% for i in Product10 %}
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <div class="product text-center">
+              <div class="product-thumb">
+                <div class="overflow-hidden position-relative">
+                  <a href="/product/{{i.subcategory.name}}/{{i.id}}/">
+                    <img class="img-fluid w-50 mb-3 img-first" src="{{i.img1.url}}" alt="product-img">
+                    <img class="img-fluid  mb-3 img-second" src="{{i.img2.url}}" alt="product-img">
+                  </a>
+                  <div class="btn-cart">
+                      <a href="/product/{{i.subcategory.name}}/{{i.id}}/" class="btn btn-primary btn-sm">View Product</a>
+                  </div>
+                </div>
+                <div class="product-hover-overlay">
+                  <a href="/wishlist/{{i.subcategory}}/{{i.id}}/" class="product-icon favorite" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
+                      class="ti-heart"></i></a>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="h5"><a class="text-color" href="/product/{{i.subcategory.name}}/{{i.id}}/">{{i.name}}</a></h3>
+                <span class="h5"><b>₹ {{i.finalPrice}}</b></span>
+              </div>
+              <!-- product label badge -->
+              <div class="product-label sale">
+                -{{i.discount}}%
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+          <!-- //end of product -->
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /shop -->
+
+{% endblock %}

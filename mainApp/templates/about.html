@@ -1,0 +1,119 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+
+<!-- breadcrumb -->
+<nav class="bg-gray py-3">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">About Us</li>
+    </ol>
+  </div>
+</nav>
+<!-- /breadcrumb -->
+
+<!-- about -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- image circle background -->
+
+        <img class="rounded mx-auto d-block"  src="{%static 'images/backgrounds/main8.jpg' %}" alt="product-img" >
+        <br>
+
+                 <h2 class="section-title">About Us</h2>
+
+Dear Customer, here we brought an one stop indian electronics products solution for you. I4india started their journey in June 2007 with Name A.K. Steel Metacasting (Faridabad & Bhiwadi) and Mahaveer Metal and Electronics Manufacturing Enterprenure at Delhi to give you the best stone crushing machine & spares in very reasonable price with standard maintained sincere quality product of electronics. We Worked as a MOE for so many Enterprenure with quality control and further R&D. To Promote vocal for local we started in July 2020 I4india with indian electronics products. We bring you our Indian manufactured products like mixer, grinder, led tv, home theater, fan , cooler, washing machine, ac, iron, refrigerator etc.
+        We create the true nature of sensory experience for our customers. We are in pursuit of the perfect attitude to make each product. The Company has strict quality assurance system, production ,supply chain management and control capabilities to ensure timely delivery of cost-effective quality products.
+<br>
+<br>
+        <img class="img-fluid mb-4 mb-md-0" src="{%static 'images/backgrounds/main11.jpg' %}" alt="product-img">
+      </div>
+      <div class="col-md-6">
+        <h2 class="section-title">Promoted Vocal For Local</h2>
+        <p class="mb-4">
+Prime Minister Narendra Modi, addressing the nation on its 74th Independence Day today, said an "Aatmanirbhar Bharat" or self-reliant India had become a mantra for 130 crore Indians and it would soon become reality. He urged the country to embrace the "Vocal for Local" pledge and use its vast natural resources to "Make in India and Make For the World".
+
+"Aatmanirbhar Bharat is in the minds and hearts of every Indian. We are transforming this dream into reality," PM Modi said in his seventh address from the historic Red Fort, a speech dedicated mainly to his emphasis on a self-reliant economy.</p>
+<br>
+<br>
+<br>
+
+        <p class="mb-4"> <img class="img-fluid mb-4 mb-md-0" src="{%static 'images/backgrounds/main9.jpg' %}" alt="product-img">
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+        <p>Company adhere to people-oriented, respect talent, for employees to provide a broad space for development; while focusing on internal management, sound operation, has been committed to develop a sound scientific, standardized and efficient business operation and management system. We will maintain the "unity, cooperation, sharing, dedication," the spirit, to provide you with the most professional products and services.</p>
+
+
+
+
+
+
+      </div>
+</section>
+<!-- /about -->
+
+<section class="section overlay cta" data-background="{%static 'images/backgrounds/main9.jpg' %}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="text-white mb-2">End of Season Sale</h1>
+        <p class="text-white mb-4">Take 25% off all sweaters and knits. Discount applied at checkout.</p>
+        <script>
+          var sites = [
+              '/shop/TV/',
+              '/shop/AUDIO/',
+              '/shop/LARGE APPLIANCES/',
+              '/shop/KITCHEN/',
+              '/shop/ELECTRICAL APPLIANCES/'
+          ];
+
+          function randomSite() {
+              var i = parseInt(Math.random() * sites.length);
+              location.href = sites[i];
+          }
+      </script>
+      <a href="#" onclick="randomSite();" class="btn btn-light">shop now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- team -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <!-- team member -->
+      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+        <div class="card border-0 text-center team-member">
+          <img   src="{%static 'images/team/shivam5.jpg' %}" alt="team-member">
+          <div class="card-body">
+            <h4 class="card-title">SHIVAM BANSIWAL</h4>
+            <p class="card-text">Developer</p>
+          </div>
+
+        </div>
+      </div>
+      <!-- team member -->
+      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+        <div class="card border-0 text-center team-member">
+          <img style="padding-left:50px" height="350px" width="300px" src="{%static 'images/team/sonali.jpg'%}" alt="team-member">
+          <div class="card-body">
+            <h4 class="card-title">SONALI PRAJAPATI</h4>
+            <p class="card-text">Developer</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /team -->
+{% endblock %}

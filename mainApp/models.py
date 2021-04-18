@@ -1,0 +1,438 @@
+from django.db import models
+
+class Category(models.Model):
+    name=models.CharField(max_length=50)
+    def __str__(self):
+        return str(self.id)+" "+self.name
+
+class SubCategory(models.Model):
+    category=models.ForeignKey(Category,on_delete=models.CASCADE)
+    name=models.CharField(max_length=50)
+    def __str__(self):
+        return str(self.id)+" "+self.name
+
+class Career(models.Model):
+    fname = models.CharField(max_length=50)
+    lname = models.CharField(max_length=50)
+    email = models.EmailField()
+    subject = models.CharField(max_length=200)
+    msg = models.TextField()
+
+    def __str__(self):
+        return str(self.id) + " " + self.fname+ " " + self.lname
+
+class Query(models.Model):
+    fname = models.CharField(max_length=50)
+    lname = models.CharField(max_length=50)
+    email = models.EmailField()
+    subject = models.CharField(max_length=200)
+    msg = models.TextField()
+
+    def __str__(self):
+        return str(self.id) + " " + self.fname+ " " + self.lname
+
+class Buyer(models.Model):
+    name=models.CharField(max_length=20)
+    uname=models.CharField(max_length=20)
+    email=models.EmailField(unique=True)
+    phone=models.CharField(max_length=20,default=None,null=True,blank=True)
+    address1=models.CharField(max_length=20,default=None,null=True,blank=True)
+    address2=models.CharField(max_length=20,default=None,null=True,blank=True)
+    city=models.CharField(max_length=20,default=None,null=True,blank=True)
+    state=models.CharField(max_length=20,default=None,null=True,blank=True)
+    pin=models.CharField(max_length=20,default=None,null=True,blank=True)
+
+    def __str__(self):
+        return str(self.id)+" "+self.name
+
+
+class AirCooler(models.Model):
+    name = models.CharField(max_length=80)
+    desc = models.CharField(max_length=250)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+    basePrice = models.IntegerField()
+    discount = models.IntegerField(default=0, null=True, blank=True)
+    finalPrice = models.IntegerField(default=0, null=True, blank=True)
+    img1 = models.ImageField(upload_to='aircoolerproductimages/', default=None, null=True, blank=True)
+    img2 = models.ImageField(upload_to='aircoolerproductimages/', default=None, null=True, blank=True)
+    img3 = models.ImageField(upload_to='aircoolerproductimages/', default=None, null=True, blank=True)
+    img4 = models.ImageField(upload_to='aircoolerproductimages/', default=None, null=True, blank=True)
+    img5 = models.ImageField(upload_to='aircoolerproductimages/', default=None, null=True, blank=True)
+    img6 = models.ImageField(upload_to='aircoolerproductimages/', default=None, null=True, blank=True)
+    img7 = models.ImageField(upload_to='aircoolerproductimages/', default=None, null=True, blank=True)
+    brand = models.CharField(max_length=80)
+    model = models.CharField(max_length=80)
+    color = models.CharField(max_length=80)
+    power = models.CharField(max_length=80)
+    rating = models.CharField(max_length=80)
+    airFlowCapacity = models.CharField(max_length=80)
+    coolingPad = models.CharField(max_length=80)
+    tankCapacity = models.CharField(max_length=80)
+    standardRoomDimension = models.CharField(max_length=80)
+    waterConsumption = models.CharField(max_length=80)
+    windSpeed = models.CharField(max_length=80)
+    coolingHeating = models.CharField(max_length=80)
+    feature = models.CharField(max_length=150)
+    warrantyPeriod = models.CharField(max_length=80)
+    warrantyType = models.CharField(max_length=80)
+    boxContent = models.CharField(max_length=150)
+
+    def __str__(self):
+        return str(self.id)+" "+self.name
+
+
+class AttaChakki(models.Model):
+    name = models.CharField(max_length=80)
+    desc = models.CharField(max_length=250)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+    basePrice = models.IntegerField()
+    discount = models.IntegerField(default=0, null=True, blank=True)
+    finalPrice = models.IntegerField(default=0, null=True, blank=True)
+    img1 = models.ImageField(upload_to='attachakkiproductimages/', default=None, null=True, blank=True)
+    img2 = models.ImageField(upload_to='attachakkiproductimages/', default=None, null=True, blank=True)
+    img3 = models.ImageField(upload_to='attachakkiproductimages/', default=None, null=True, blank=True)
+    img4 = models.ImageField(upload_to='attachakkiproductimages/', default=None, null=True, blank=True)
+    img5 = models.ImageField(upload_to='attachakkiproductimages/', default=None, null=True, blank=True)
+    img6 = models.ImageField(upload_to='attachakkiproductimages/', default=None, null=True, blank=True)
+    img7 = models.ImageField(upload_to='attachakkiproductimages/', default=None, null=True, blank=True)
+    brand = models.CharField(max_length=80)
+    model = models.CharField(max_length=80)
+    color = models.CharField(max_length=80)
+    HP = models.CharField(max_length=80)
+    LBH = models.CharField(max_length=80)
+    weight = models.CharField(max_length=80)
+    grindingCapacity = models.CharField(max_length=80)
+    hopperCapacity = models.CharField(max_length=80)
+    powerConsumption = models.CharField(max_length=80)
+    warrantyPeriod = models.CharField(max_length=80)
+    warrantyType = models.CharField(max_length=80)
+    boxContent = models.CharField(max_length=150)
+
+    def __str__(self):
+        return str(self.id)+" "+self.name
+
+class HotPlate(models.Model):
+    name = models.CharField(max_length=80)
+    desc = models.CharField(max_length=250)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+    basePrice = models.IntegerField()
+    discount = models.IntegerField(default=0, null=True, blank=True)
+    finalPrice = models.IntegerField(default=0, null=True, blank=True)
+    img1 = models.ImageField(upload_to='hotplateproductimages/', default=None, null=True, blank=True)
+    img2 = models.ImageField(upload_to='hotplateproductimages/', default=None, null=True, blank=True)
+    img3 = models.ImageField(upload_to='hotplateproductimages/', default=None, null=True, blank=True)
+    img4 = models.ImageField(upload_to='hotplateproductimages/', default=None, null=True, blank=True)
+    img5 = models.ImageField(upload_to='hotplateproductimages/', default=None, null=True, blank=True)
+    img6 = models.ImageField(upload_to='hotplateproductimages/', default=None, null=True, blank=True)
+    img7 = models.ImageField(upload_to='hotplateproductimages/', default=None, null=True, blank=True)
+    brand = models.CharField(max_length=80)
+    model = models.CharField(max_length=80)
+    color = models.CharField(max_length=80)
+    power = models.CharField(max_length=80)
+    rating = models.CharField(max_length=80)
+    inputVoltage = models.CharField(max_length=80)
+    powerIndicator = models.CharField(max_length=80)
+    temperatureAdjuster = models.CharField(max_length=80)
+    warrantyPeriod = models.CharField(max_length=80)
+    warrantyType = models.CharField(max_length=80)
+    boxContent = models.CharField(max_length=150)
+
+    def __str__(self):
+        return str(self.id)+" "+self.name
+
+class Tv(models.Model):
+    name = models.CharField(max_length=80)
+    desc = models.CharField(max_length=250)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+    basePrice = models.IntegerField()
+    discount = models.IntegerField(default=0, null=True, blank=True)
+    finalPrice = models.IntegerField(default=0, null=True, blank=True)
+    img1 = models.ImageField(upload_to='tvproductimages/', default=None, null=True, blank=True)
+    img2 = models.ImageField(upload_to='tvproductimages/', default=None, null=True, blank=True)
+    img3 = models.ImageField(upload_to='tvproductimages/', default=None, null=True, blank=True)
+    img4 = models.ImageField(upload_to='tvproductimages/', default=None, null=True, blank=True)
+    img5 = models.ImageField(upload_to='tvproductimages/', default=None, null=True, blank=True)
+    img6 = models.ImageField(upload_to='tvproductimages/', default=None, null=True, blank=True)
+    img7 = models.ImageField(upload_to='tvproductimages/', default=None, null=True, blank=True)
+    screenSize=models.CharField(max_length=80)
+    brand=models.CharField(max_length=80)
+    model=models.CharField(max_length=80)
+    screenType=models.CharField(max_length=80)
+    resolution=models.CharField(max_length=80)
+    refreshRate=models.CharField(max_length=80)
+    hdmi=models.CharField(max_length=80)
+    blueRayPlayers=models.CharField(max_length=80)
+    gamingConsole=models.CharField(max_length=80)
+    sound=models.CharField(max_length=80)
+    megaContrast=models.CharField(max_length=80)
+    purcolor=models.CharField(max_length=80)
+    pictureQuality=models.CharField(max_length=80)
+    design=models.CharField(max_length=80)
+    speaker=models.CharField(max_length=80)
+    usb=models.CharField(max_length=80)
+    compositeIn=models.CharField(max_length=80)
+    headphoneOut=models.CharField(max_length=80)
+    wallMount=models.CharField(max_length=80)
+    additionalFeatures=models.CharField(max_length=200)
+    powerSupply=models.CharField(max_length=80)
+    standby=models.CharField(max_length=80)
+    dimensions=models.CharField(max_length=80)
+    weightinKg=models.CharField(max_length=80)
+    warrantyPeriod=models.CharField(max_length=80)
+    warrantyType=models.CharField(max_length=80)
+    boxContent=models.CharField(max_length=80)
+
+    def __str__(self):
+        return str(self.id)+" "+self.name
+
+class Refrigerator(models.Model):
+    name = models.CharField(max_length=80)
+    desc = models.CharField(max_length=250)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+    basePrice = models.IntegerField()
+    discount = models.IntegerField(default=0, null=True, blank=True)
+    finalPrice = models.IntegerField(default=0, null=True, blank=True)
+    img1 = models.ImageField(upload_to='refrigeratorproductimages/', default=None, null=True, blank=True)
+    img2 = models.ImageField(upload_to='refrigeratorproductimages/', default=None, null=True, blank=True)
+    img3 = models.ImageField(upload_to='refrigeratorproductimages/', default=None, null=True, blank=True)
+    img4 = models.ImageField(upload_to='refrigeratorproductimages/', default=None, null=True, blank=True)
+    img5 = models.ImageField(upload_to='refrigeratorproductimages/', default=None, null=True, blank=True)
+    img6 = models.ImageField(upload_to='refrigeratorproductimages/', default=None, null=True, blank=True)
+    img7 = models.ImageField(upload_to='refrigeratorproductimages/', default=None, null=True, blank=True)
+    brand=models.CharField(max_length=80)
+    model=models.CharField(max_length=80)
+    capacity=models.CharField(max_length=80)
+    starRating=models.CharField(max_length=80)
+    coolingTechnology=models.CharField(max_length=80)
+    colour=models.CharField(max_length=80)
+    inverterCompressor=models.CharField(max_length=80)
+    defrostingType=models.CharField(max_length=80)
+    exteriors=models.CharField(max_length=80)
+    noOfShelves=models.CharField(max_length=80)
+    specialCompartments=models.CharField(max_length=80)
+    shelvesType=models.CharField(max_length=80)
+    vegetableBasket=models.CharField(max_length=80)
+    dimensions=models.CharField(max_length=80)
+    weightinKg=models.CharField(max_length=80)
+    unitWarranty=models.CharField(max_length=80)
+    compressorWarranty=models.CharField(max_length=80)
+    warrantyType=models.CharField(max_length=80)
+    boxContent=models.CharField(max_length=80)
+
+    def __str__(self):
+        return str(self.id)+" "+self.name
+
+class Iron(models.Model):
+    name = models.CharField(max_length=80)
+    desc = models.CharField(max_length=250)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+    basePrice = models.IntegerField()
+    discount = models.IntegerField(default=0, null=True, blank=True)
+    finalPrice = models.IntegerField(default=0, null=True, blank=True)
+    img1 = models.ImageField(upload_to='ironproductimages/', default=None, null=True, blank=True)
+    img2 = models.ImageField(upload_to='ironproductimages/', default=None, null=True, blank=True)
+    img3 = models.ImageField(upload_to='ironproductimages/', default=None, null=True, blank=True)
+    img4 = models.ImageField(upload_to='ironproductimages/', default=None, null=True, blank=True)
+    img5 = models.ImageField(upload_to='ironproductimages/', default=None, null=True, blank=True)
+    img6 = models.ImageField(upload_to='ironproductimages/', default=None, null=True, blank=True)
+    img7 = models.ImageField(upload_to='ironproductimages/', default=None, null=True, blank=True)
+    brand=models.CharField(max_length=80)
+    model=models.CharField(max_length=80)
+    type=models.CharField(max_length=80)
+    colour=models.CharField(max_length=80)
+    bodyMaterial=models.CharField(max_length=80)
+    corded=models.CharField(max_length=80)
+    swivelCord=models.CharField(max_length=80)
+    indicatorLight=models.CharField(max_length=80)
+    tempratureControl=models.CharField(max_length=80)
+    solePlateType=models.CharField(max_length=80)
+    power=models.CharField(max_length=80)
+    voltage=models.CharField(max_length=80)
+    dimensions=models.CharField(max_length=80)
+    weight=models.CharField(max_length=80)
+    warrantyPeriod=models.CharField(max_length=80)
+    warrantyType=models.CharField(max_length=80)
+    boxContent=models.CharField(max_length=80)
+
+    def __str__(self):
+        return str(self.id)+" "+self.name
+
+class HomeTheater(models.Model):
+    name = models.CharField(max_length=80)
+    desc = models.CharField(max_length=250)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+    basePrice = models.IntegerField()
+    discount = models.IntegerField(default=0, null=True, blank=True)
+    finalPrice = models.IntegerField(default=0, null=True, blank=True)
+    img1 = models.ImageField(upload_to='hometheaterproductimages/', default=None, null=True, blank=True)
+    img2 = models.ImageField(upload_to='hometheaterproductimages/', default=None, null=True, blank=True)
+    img3 = models.ImageField(upload_to='hometheaterproductimages/', default=None, null=True, blank=True)
+    img4 = models.ImageField(upload_to='hometheaterproductimages/', default=None, null=True, blank=True)
+    img5 = models.ImageField(upload_to='hometheaterproductimages/', default=None, null=True, blank=True)
+    img6 = models.ImageField(upload_to='hometheaterproductimages/', default=None, null=True, blank=True)
+    img7 = models.ImageField(upload_to='hometheaterproductimages/', default=None, null=True, blank=True)
+    brand=models.CharField(max_length=80)
+    model=models.CharField(max_length=80)
+    colour=models.CharField(max_length=80)
+    supportsUSB_AD_AUX_FM_Bluetooth=models.CharField(max_length=80)
+    LEDDisplay=models.CharField(max_length=80)
+    wooferSpeakerDrive=models.CharField(max_length=80)
+    impedance=models.CharField(max_length=80)
+    remoteSensitivity=models.CharField(max_length=80)
+    inputPowerRange=models.CharField(max_length=80)
+    warrantyPeriod=models.CharField(max_length=80)
+    warrantyType=models.CharField(max_length=80)
+    boxContent=models.CharField(max_length=80)
+
+    def _str_(self):
+        return str(self.id)+" "+self.name
+
+class TowerTheater(models.Model):
+    name = models.CharField(max_length=80)
+    desc = models.CharField(max_length=250)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+    basePrice = models.IntegerField()
+    discount = models.IntegerField(default=0, null=True, blank=True)
+    finalPrice = models.IntegerField(default=0, null=True, blank=True)
+    img1 = models.ImageField(upload_to='towertheaterproductimages/', default=None, null=True, blank=True)
+    img2 = models.ImageField(upload_to='towertheaterproductimages/', default=None, null=True, blank=True)
+    img3 = models.ImageField(upload_to='towertheaterproductimages/', default=None, null=True, blank=True)
+    img4 = models.ImageField(upload_to='towertheaterproductimages/', default=None, null=True, blank=True)
+    img5 = models.ImageField(upload_to='towertheaterproductimages/', default=None, null=True, blank=True)
+    img6 = models.ImageField(upload_to='towertheaterproductimages/', default=None, null=True, blank=True)
+    img7 = models.ImageField(upload_to='towertheaterproductimages/', default=None, null=True, blank=True)
+    brand=models.CharField(max_length=80)
+    model=models.CharField(max_length=80)
+    colour=models.CharField(max_length=80)
+    speakerDriveRangeSize=models.CharField(max_length=80)
+    tweeterType=models.CharField(max_length=80)
+    impedance=models.CharField(max_length=80)
+    frequencyResponseRange=models.CharField(max_length=80)
+    tweeter=models.CharField(max_length=80)
+    SNratio=models.CharField(max_length=80)
+    sepration=models.CharField(max_length=80)
+    sensitivity=models.CharField(max_length=80)
+    remoteSensitivity=models.CharField(max_length=80)
+    inputPowerRange=models.CharField(max_length=80)
+    feature=models.CharField(max_length=200)
+    warrantyPeriod=models.CharField(max_length=80)
+    warrantyType=models.CharField(max_length=80)
+    boxContent=models.CharField(max_length=80)
+
+    def _str_(self):
+        return str(self.id)+" "+self.name
+
+class JuicerMixer(models.Model):
+    name = models.CharField(max_length=80)
+    desc = models.CharField(max_length=250)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+    basePrice = models.IntegerField()
+    discount = models.IntegerField(default=0, null=True, blank=True)
+    finalPrice = models.IntegerField(default=0, null=True, blank=True)
+    img1 = models.ImageField(upload_to='juicerproductimages/', default=None, null=True, blank=True)
+    img2 = models.ImageField(upload_to='juicerproductimages/', default=None, null=True, blank=True)
+    img3 = models.ImageField(upload_to='juicerproductimages/', default=None, null=True, blank=True)
+    img4 = models.ImageField(upload_to='juicerproductimages/', default=None, null=True, blank=True)
+    img5 = models.ImageField(upload_to='juicerproductimages/', default=None, null=True, blank=True)
+    img6 = models.ImageField(upload_to='juicerproductimages/', default=None, null=True, blank=True)
+    img7 = models.ImageField(upload_to='juicerproductimages/', default=None, null=True, blank=True)
+    brand=models.CharField(max_length=80)
+    model=models.CharField(max_length=80)
+    colour=models.CharField(max_length=80)
+    power=models.CharField(max_length=80)
+    rating=models.CharField(max_length=80)
+    stainlessSteelJar=models.CharField(max_length=80)
+    copperMotor=models.CharField(max_length=80)
+    feature=models.CharField(max_length=200)
+    warrantyPeriod=models.CharField(max_length=80)
+    warrantyType=models.CharField(max_length=80)
+    boxContent=models.CharField(max_length=80)
+
+    def _str_(self):
+        return str(self.id)+" "+self.name
+
+class JuicerMixerGrinder(models.Model):
+    name = models.CharField(max_length=80)
+    desc = models.CharField(max_length=250)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+    basePrice = models.IntegerField()
+    discount = models.IntegerField(default=0, null=True, blank=True)
+    finalPrice = models.IntegerField(default=0, null=True, blank=True)
+    img1 = models.ImageField(upload_to='juicergrinderproductimages/', default=None, null=True, blank=True)
+    img2 = models.ImageField(upload_to='juicergrinderproductimages/', default=None, null=True, blank=True)
+    img3 = models.ImageField(upload_to='juicergrinderproductimages/', default=None, null=True, blank=True)
+    img4 = models.ImageField(upload_to='juicergrinderproductimages/', default=None, null=True, blank=True)
+    img5 = models.ImageField(upload_to='juicergrinderproductimages/', default=None, null=True, blank=True)
+    img6 = models.ImageField(upload_to='juicergrinderproductimages/', default=None, null=True, blank=True)
+    img7 = models.ImageField(upload_to='juicergrinderproductimages/', default=None, null=True, blank=True)
+    brand=models.CharField(max_length=80)
+    model=models.CharField(max_length=80)
+    type=models.CharField(max_length=80)
+    capacity=models.CharField(max_length=80)
+    colour=models.CharField(max_length=80)
+    noOfJars=models.CharField(max_length=80)
+    functions=models.CharField(max_length=80)
+    bodyShape=models.CharField(max_length=80)
+    bodyMaterial=models.CharField(max_length=80)
+    jarMaterial=models.CharField(max_length=80)
+    bladeMaterial=models.CharField(max_length=80)
+    noOfSpeedSettings=models.CharField(max_length=80)
+    chutneyJar=models.CharField(max_length=80)
+    mainJai=models.CharField(max_length=80)
+    middleJar=models.CharField(max_length=80)
+    features=models.CharField(max_length=200)
+    power=models.CharField(max_length=80)
+    voltage=models.CharField(max_length=80)
+    rating=models.CharField(max_length=80)
+    dimensions=models.CharField(max_length=80)
+    weigth=models.CharField(max_length=80)
+    warrantyPeriod=models.CharField(max_length=80)
+    warrantyType=models.CharField(max_length=80)
+    boxContent=models.CharField(max_length=80)
+
+    def _str_(self):
+        return str(self.id)+" "+self.name
+
+class Wishlist(models.Model):
+    user=models.ForeignKey(Buyer,on_delete=models.CASCADE)
+    attaChakki=models.ForeignKey(AttaChakki,on_delete=models.CASCADE, default=None, null=True,)
+    airCooler=models.ForeignKey(AirCooler,on_delete=models.CASCADE, default=None, null=True,)
+    hotplate=models.ForeignKey(HotPlate,on_delete=models.CASCADE, default=None, null=True,)
+    homeTheater=models.ForeignKey(HomeTheater,on_delete=models.CASCADE, default=None, null=True,)
+    towerTheater=models.ForeignKey(TowerTheater,on_delete=models.CASCADE, default=None, null=True,)
+    iron=models.ForeignKey(Iron,on_delete=models.CASCADE, default=None, null=True,)
+    tv=models.ForeignKey(Tv,on_delete=models.CASCADE, default=None, null=True,)
+    juicerMixer=models.ForeignKey(JuicerMixer,on_delete=models.CASCADE, default=None, null=True,)
+    juicerMixerGrinder=models.ForeignKey(JuicerMixerGrinder,on_delete=models.CASCADE, default=None, null=True,)
+    refrigerator=models.ForeignKey(Refrigerator,on_delete=models.CASCADE, default=None, null=True,)
+
+    def __str__(self):
+        return str(self.id)+" "+self.user.name
+
+class Cart(models.Model):
+    buyer=models.ForeignKey(Buyer,on_delete=models.CASCADE)
+    attaChakki = models.ForeignKey(AttaChakki, on_delete=models.CASCADE, default=None, null=True, )
+    airCooler = models.ForeignKey(AirCooler, on_delete=models.CASCADE, default=None, null=True, )
+    hotplate = models.ForeignKey(HotPlate, on_delete=models.CASCADE, default=None, null=True, )
+    homeTheater = models.ForeignKey(HomeTheater, on_delete=models.CASCADE, default=None, null=True, )
+    towerTheater = models.ForeignKey(TowerTheater, on_delete=models.CASCADE, default=None, null=True, )
+    iron = models.ForeignKey(Iron, on_delete=models.CASCADE, default=None, null=True, )
+    tv = models.ForeignKey(Tv, on_delete=models.CASCADE, default=None, null=True, )
+    juicerMixer = models.ForeignKey(JuicerMixer, on_delete=models.CASCADE, default=None, null=True, )
+    juicerMixerGrinder = models.ForeignKey(JuicerMixerGrinder, on_delete=models.CASCADE, default=None, null=True, )
+    refrigerator = models.ForeignKey(Refrigerator, on_delete=models.CASCADE, default=None, null=True, )
+    quantity=models.IntegerField()
+    total=models.IntegerField()
+
+    def __str__(self):
+        return str(self.id)+" "+self.buyer.name

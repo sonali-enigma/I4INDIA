@@ -1,0 +1,96 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+<!-- contact -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-between">
+      <!-- form -->
+      <div class="col-lg-7 mb-5 mb-lg-0 text-center text-md-left">
+      {% if messages %}
+      {% for i in messages %}
+         <h3>{{i}}</h3>
+          {% endfor %}
+        {% else %}
+        <h2 class="section-title">Contact Us</h2>
+        {% endif %}
+        <form class="row" method="post">
+            {% csrf_token %}
+          <div class="col-md-6">
+            <input type="text" id="firstName" name="fname" class="form-control mb-4 rounded-0" placeholder="First Name" required>
+          </div>
+          <div class="col-md-6">
+            <input type="text" id="lastName" name="lname" class="form-control mb-4 rounded-0" placeholder="Last Name" required>
+          </div>
+          <div class="col-md-6">
+            <input type="email" id="email" name="email" class="form-control mb-4 rounded-0" placeholder="Email" required>
+          </div>
+          <div class="col-md-12">
+            <input type="text" id="subject" name="subject" class="form-control mb-4 rounded-0" placeholder="Subject" required>
+          </div>
+          <div class="col-md-12">
+            <textarea name="message" id="message" class="form-control rounded-0 mb-4" placeholder="Message" required></textarea>
+          </div>
+          <div class="col-md-12">
+            <button type="submit" value="send" class="btn btn-primary">Submit now</button>
+          </div>
+        </form>
+      </div>
+      <!-- contact item -->
+      <div class="col-lg-4">
+        <div class="d-flex mb-60">
+          <i class="ti-location-pin contact-icon"></i>
+          <div>
+              <address>
+                  <h3>Trade Enquiry</h3>
+                  <p>Phone: +91 9038824853</p>
+                  <p>Customer Care: customercare@i4indiaelectronics.com</p>
+                  <p>Corporate Enquiry: corporatesales@i4indiaelectronics.com</p>
+                  <p>Timings: 10am to 6pm</p>
+              </address>
+
+              <address>
+                  <h3>Online Sales</h3>
+                  <p>Track & Request: esupport@i4indiaelectronics.com</p>
+                  <p>Timings: 10am to 6pm</p>
+              </address>
+
+              <address>
+                  <h3>HR</h3>
+                  <p>Careers: jobs@i4indiaelectronics.com</p>
+                  <p>Phone:</p>
+                  <p>Timings: 10am to 6pm</p>
+              </address>
+
+              <address>
+                  <h3>Home Serve</h3>
+                  <p>Customer Care:+91 7428672100</p>
+                  <p>Email: customercare@i4indiaelectronics.com</p>
+                  <p>Careers: hr@i4indiaelectronics.com</p>
+                  <p>Timings: 10am to 6pm</p>
+              </address>
+
+              <address>
+                  <h3>Registered Office</h3>
+                  <p>C-62, Vikas Nagar</p>
+                  <p>Phase-2, Uttam Nagar</p>
+                  <p>Delhi 110059</p>
+
+              </address>
+
+              <address>
+                  <h3>Corporate Office</h3>
+                  <p>C-62, Vikas Nagar</p>
+                  <p>Phase-2, Uttam Nagar</p>
+                  <p>Delhi 110059</p>
+
+              </address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /contact -->
+{% endblock %}

@@ -1,0 +1,239 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+<!-- main wrapper -->
+<div class="main-wrapper">
+
+<!-- breadcrumb -->
+<nav class="bg-gray py-3">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Cart</li>
+    </ol>
+  </div>
+</nav>
+<!-- /breadcrumb -->
+
+<div class="section">
+  <div class="cart shopping">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mx-auto">
+          <div class="block">
+            <div class="product-list">
+              <form method="#">
+                <div class="table-responsive">
+                <table class="table cart-table">
+                    <thead>
+                      <tr>
+
+                        <th></th>
+
+                        <th><h3>Product</h3></th>
+                        <th><h4>Price</h4></th>
+                        <th><h4>Quantity</h4></th>
+                        <th><h4>Sub Total</h4></th>
+
+                      </tr>
+                    </thead>
+                  <tbody>
+                    {% for i in Cart %}
+                    {% if i.attaChakki %}
+                    <tr>
+                        <td>
+                          <a class="product-remove" href="/deletecart/{{i.id}}/">&times;</a>
+                        </td>
+                        <td>
+                          <div class="product-info">
+                            <img class="img-fluid" src="{{i.attaChakki.img1.url}}" alt="product-img" height="60px" width="60px" />
+                            <a href="/product/{{i.attaChakki.subcategory.name}}/{{i.attaChakki.id}}/">{{i.attaChakki.name}}</a>
+                          </div>
+                        </td>
+                        <td>₹ {{i.attaChakki.finalPrice}}</td>
+                        <td style="padding-left:50px;"><h5>{{i.quantity}}</h5></td>
+                        <td>₹ {{i.total}}</td>
+                      </tr>
+                      {% endif %}
+
+                      {% if i.refrigerator %}
+                      <tr>
+                        <td>
+                          <a class="product-remove" href="/deletecart/{{i.id}}/">&times;</a>
+                        </td>
+                        <td>
+                          <div class="product-info">
+                            <img class="img-fluid" src="{{i.refrigerator.img1.url}}" alt="product-img" height="60px" width="60px" />
+                            <a href="/product/{{i.refrigerator.subcategory.name}}/{{i.refrigerator.id}}/">{{i.refrigerator.name}}</a>
+                          </div>
+                        </td>
+                        <td>₹ {{i.refrigerator.finalPrice}}</td>
+                        <td style="padding-left:50px;"><h5>{{i.quantity}}</h5></td>
+                        <td>₹ {{i.total}}</td>
+                      </tr>
+                      {% endif %}
+
+                      {% if i.airCooler %}
+                      <tr>
+                        <td>
+                          <a class="product-remove" href="/deletecart/{{i.id}}/">&times;</a>
+                        </td>
+                        <td>
+                          <div class="product-info">
+                            <img class="img-fluid" src="{{i.airCooler.img1.url}}" alt="product-img" height="60px" width="60px" />
+                            <a href="/product/{{i.airCooler.subcategory.name}}/{{i.airCooler.id}}/">{{i.airCooler.name}}</a>
+                          </div>
+                        </td>
+                        <td>₹ {{i.airCooler.finalPrice}}</td>
+                        <td style="padding-left:50px;"><h5>{{i.quantity}}</h5></td>
+                        <td>₹ {{i.total}}</td>
+                      </tr>
+                      {% endif %}
+
+                      {% if i.hotplate %}
+                      <tr>
+                        <td>
+                          <a class="product-remove" href="/deletecart/{{i.id}}/">&times;</a>
+                        </td>
+                        <td>
+                          <div class="product-info">
+                            <img class="img-fluid" src="{{i.hotplate.img1.url}}" alt="product-img" height="60px" width="60px" />
+                            <a href="/product/{{i.hotplate.subcategory.name}}/{{i.hotplate.id}}/">{{i.hotplate.name}}</a>
+                          </div>
+                        </td>
+                        <td>₹ {{i.hotplate.finalPrice}}</td>
+                        <td style="padding-left:50px;"><h5>{{i.quantity}}</h5></td>
+                        <td>₹ {{i.total}}</td>
+                      </tr>
+                      {% endif %}
+
+                      {% if i.homeTheater %}
+                     <tr>
+                        <td>
+                          <a class="product-remove" href="/deletecart/{{i.id}}/">&times;</a>
+                        </td>
+                        <td>
+                          <div class="product-info">
+                            <img class="img-fluid" src="{{i.homeTheater.img1.url}}" alt="product-img" height="60px" width="60px" />
+                            <a href="/product/{{i.homeTheater.subcategory.name}}/{{i.homeTheater.id}}/">{{i.homeTheater.name}}</a>
+                          </div>
+                        </td>
+                        <td>₹ {{i.homeTheater.finalPrice}}</td>
+                        <td style="padding-left:50px;"><h5>{{i.quantity}}</h5></td>
+                        <td>₹ {{i.total}}</td>
+                      </tr>
+                      {% endif %}
+
+                      {% if i.towerTheater %}
+                      <tr>
+                        <td>
+                          <a class="product-remove" href="/deletecart/{{i.id}}/">&times;</a>
+                        </td>
+                        <td>
+                          <div class="product-info">
+                            <img class="img-fluid" src="{{i.towerTheater.img1.url}}" alt="product-img" height="60px" width="60px" />
+                            <a href="/product/{{i.towerTheater.subcategory.name}}/{{i.towerTheater.id}}/">{{i.towerTheater.name}}</a>
+                          </div>
+                        </td>
+                        <td>₹ {{i.towerTheater.finalPrice}}</td>
+                        <td style="padding-left:50px;"><h5>{{i.quantity}}</h5></td>
+                        <td>₹ {{i.total}}</td>
+                      </tr>
+                      {% endif %}
+
+                      {% if i.iron %}
+                      <tr>
+                        <td>
+                          <a class="product-remove" href="/deletecart/{{i.id}}/">&times;</a>
+                        </td>
+                        <td>
+                          <div class="product-info">
+                            <img class="img-fluid" src="{{i.iron.img1.url}}" alt="product-img" height="60px" width="60px" />
+                            <a href="/product/{{i.iron.subcategory.name}}/{{i.iron.id}}/">{{i.iron.name}}</a>
+                          </div>
+                        </td>
+                        <td>₹ {{i.iron.finalPrice}}</td>
+                        <td style="padding-left:50px;"><h5>{{i.quantity}}</h5></td>
+                        <td>₹ {{i.total}}</td>
+                      </tr>
+                      {% endif %}
+
+                      {% if i.tv %}
+                      <tr>
+                        <td>
+                          <a class="product-remove" href="/deletecart/{{i.id}}/">&times;</a>
+                        </td>
+                        <td>
+                          <div class="product-info">
+                            <img class="img-fluid" src="{{i.tv.img1.url}}" alt="product-img" height="60px" width="60px" />
+                            <a href="/product/{{i.tv.subcategory.name}}/{{i.tv.id}}/">{{i.tv.name}}</a>
+                          </div>
+                        </td>
+                        <td>₹ {{i.tv.finalPrice}}</td>
+                        <td style="padding-left:50px;"><h5>{{i.quantity}}</h5></td>
+                        <td>₹ {{i.total}}</td>
+                      </tr>
+                      {% endif %}
+
+                      {% if i.juicerMixer %}
+                      <tr>
+                        <td>
+                          <a class="product-remove" href="/deletecart/{{i.id}}/">&times;</a>
+                        </td>
+                        <td>
+                          <div class="product-info">
+                            <img class="img-fluid" src="{{i.juicerMixer.img1.url}}" alt="product-img" height="60px" width="60px" />
+                            <a href="/product/{{i.juicerMixer.subcategory.name}}/{{i.juicerMixer.id}}/">{{i.juicerMixer.name}}</a>
+                          </div>
+                        </td>
+                        <td>₹ {{i.juicerMixer.finalPrice}}</td>
+                        <td style="padding-left:50px;"><h5>{{i.quantity}}</h5></td>
+                        <td>₹ {{i.total}}</td>
+                      </tr>
+                      {% endif %}
+
+                      {% if i.juicerMixerGrinder %}
+                      <tr>
+                        <td>
+                          <a class="product-remove" href="/deletecart/{{i.id}}/">&times;</a>
+                        </td>
+                        <td>
+                          <div class="product-info">
+                            <img class="img-fluid" src="{{i.juicerMixerGrinder.img1.url}}" alt="product-img" height="60px" width="60px" />
+                            <a href="/product/{{i.juicerMixerGrinder.subcategory.name}}/{{i.juicerMixerGrinder.id}}/">{{i.juicerMixerGrinder.name}}</a>
+                          </div>
+                        </td>
+                        <td>₹ {{i.juicerMixerGrinder.finalPrice}}</td>
+                        <td style="padding-left:50px;"><h5>{{i.quantity}}</h5></td>
+                        <td>₹ {{i.total}}</td>
+                      </tr>
+                      {% endif %}
+                      <!-- //end of product -->
+                  {% endfor %}
+
+                    </tbody>
+                  </table>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-12">
+                    <ul class="list-unstyled text-right">
+                      <li>Sub Total <span class="d-inline-block w-100px">₹ {{Sub}}</span></li>
+                      <li>Delivery Charges:<span class="d-inline-block w-100px">₹ {{Delivery}}</span></li>
+                      <li>Grand Total <span class="d-inline-block w-100px">₹ {{Final}}</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <hr>
+                <a href="/404/" class="btn btn-primary float-right">Checkout</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
